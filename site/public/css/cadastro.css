@@ -1,0 +1,212 @@
+.cadastro {
+    background-image: url("https://e1.pxfuel.com/desktop-wallpaper/719/661/desktop-wallpaper-clouds-laptop-clouds-pink-aesthetic.jpg");
+    background-size: cover;
+    padding: 30px 0 50px;
+}
+
+.form * {
+    color: black;
+}
+
+.form {
+    background-color: #6c3c0c;
+    width: 500px;
+    max-width: 850px;
+    padding: 1.9rem 2.5rem 1rem 2rem;
+    margin: auto;
+    border-radius: 15px;
+    box-shadow: -12px 13px 7px 1px rgba(0, 0, 0, 0.817);
+}
+
+.cadastro h1{
+    color: white;
+}
+
+.cadastro p{
+    color: white;
+}
+
+
+.cadastro label{
+    color: white;
+}
+.form h1,
+.subtitulo p
+label {
+    width: max-content;
+    flex-wrap: wrap;
+}
+
+.subtitulo {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+
+
+.form h1 {
+    font-size: 1.4rem;
+}
+
+.form label {
+    font-size: 0.8rem;
+    font-weight: 500;
+}
+input{
+    border: 1px solid black;
+}
+
+button{
+    border: 1px solid black;
+}
+.boxes {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+
+.box {
+    display: flex;
+    width: max-content;
+}
+
+.form .boxes {
+    margin-top: 20px;
+
+}
+
+.form .box {
+    margin-top: 15px;
+    flex-direction: column;
+}
+
+.form input {
+    background-color: #dbdbdb;
+    border-radius: 5px;
+    width: max-content;
+    padding: 5px 10px;
+    font-size: 0.7rem;
+}
+
+.form input::placeholder {
+    font-size: 0.55rem;
+}
+
+.empresa input {
+    width: 12.5rem;
+}
+
+
+.e-mail input {
+    width: 12.5rem;
+}
+
+.senha {
+    width: 12.5rem;
+}
+
+.senha input {
+    width: 80%;
+    border-radius: 5px 0 0 5px;
+
+}
+
+.caixa_senha,
+button {
+    display: flex;
+    align-items: center;
+}
+
+.caixa_senha button {
+    width: 20%;
+    height: 100%;
+    cursor: pointer;
+    justify-content: center;
+    background-color: #dbdbdb;
+    border-radius: 0 5px 5px 0;
+}
+
+.banner{
+    background-image: url("https://images8.alphacoders.com/805/805636.jpg");
+}
+.caixa_senha img {
+    height: 14px;
+    width: 14px;
+}
+
+.confirmar_senha {
+    width: 12.5rem;
+}
+
+.confirmar_senha input {
+    width: 80%;
+    border-radius: 5px 0 0 5px;
+
+}
+
+.check {
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+}
+
+.check .boxes {
+    flex: 1;
+}
+
+.check .box {
+    flex-direction: row;
+    width: max-content;
+    align-items: center;
+}
+
+.check label {
+    margin-left: 10px;
+}
+
+.check input {
+    width: 20px;
+    height: 20px;
+}
+
+.check input:checked+label {
+    color: green;
+}
+
+.alerta {
+    font-size: 0.65em;
+    margin-top: 07px;
+    color: red;
+}
+
+.alerta [id="alert_senhaErrada"] {
+    max-width: fit-content;
+
+}
+
+.check button {
+    width: max-content;
+    height: max-content;
+    color: #fff;
+    font-size: 1.3rem;
+    font-weight: 600;
+    padding: 0.5rem 1.9rem;
+    border-radius: 5px;
+}
+.cadastro .entrar a{
+    color: white;
+}
+.entrar {
+    margin-top: 20px;
+    width: max-content;
+    margin: 20px auto 0 auto;
+}
+
+.entrar a {
+    font-size: 0.6rem;
+    text-decoration: underline;
+}
+
+.footer{
+    background-color: #6c3c0c;
+}

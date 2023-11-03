@@ -1,85 +1,131 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt-br">
 
 <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-    <title>AquaTech | Página Inicial</title>
-
-    <script src="./js/sessao.js"></script>
-
-    <link rel="icon" href="./assets/icon/favicon2.ico">
-    <link rel="stylesheet" href="./css/estilo.css">
-    <link rel="preconnect" href="https://fonts.gstatic.com">
-    <!-- <link
-        href="https://fonts.googleapis.com/css2?family=Exo+2:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
-        rel="stylesheet"> -->
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/reset.css">
+  <link rel="shortcut icon" href="assets/imgs/logobiblia.png" type="image/x-icon">
+  <title>BÍBLIQUIZ</title>
 </head>
 
 <body>
-    <div class="header">
-      <div class="container">
-        <h1 class="titulo">AquaTech</h1>
-        <ul class="navbar">
-          <li class="agora">
-            <a href="#">Inicial</a>
-          </li>
-          <li>
-            <a href="simulador.html">Simulador</a>
-          </li>
-          <li>|</li>
-          <li>
-            <a href="login.html">Login</a>
-          </li>
-          <li>
-            <a href="cadastro.html">Cadastro</a>
-          </li>
+
+  <!-- CABEÇALHO / NAVBAR  -->
+  <header class="header" id="header">
+    <div class="container">
+      <a href="index.html">
+        <img class="imgnav" src="assets/imgs/logobiblia.png" alt="">
+      </a>
+      <p>BÍBLIQUIZ</p>
+      <nav class="navbar">
+        <ul class="list-items">
+          <li><a class="a-destaque" href="index.html">Home</a></li>
+          <li><a href="#projetobibliaquiz">Projeto</a></li>
+          <li><a href="cadastro.html">Cadastro</a></li>
+          <li><a href="login.html">Login</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+  <!-- FIM CABEÇALHO / NAVBAR  -->
+
+  <!-- PRIMERIA SESSÃO DA HOME -->
+  <section class="banner">
+    <div class="container">
+      <div class="content-text">
+        <h2>Descubra o seu Domínio da Bíblia!</h2>
+        <p>Venha se desafiar e aprender com a Bíblia!</p>
+        <a href="login.html"><button class="btncmc">Começar o Quiz</button></a>
+      </div>
+    </div>
+    </div>
+</section>
+
+  <!-- FIM PRIMERIA SESSÃO DA HOME -->
+
+
+
+  <!-- COMEÇO DA SESSÃO DO PROJETO -->
+  <section class="Projeto">
+
+    
+    <div class="container">
+      <div id="projetobibliaquiz" class="content-text">
+        <h2>Projeto - BÍBLIQUIZ</h2>
+        
+        <p>O projeto BÍBLIQUIZ se fundamenta na importância de promover o conhecimento e entendimento das Escrituras
+          Sagradas de forma interativa e envolvente. Criando laços mais fortes enquanto exploramos juntos as riquezas da
+          Bíblia. É mais do que um jogo; é uma oportunidade para crescermos juntos em nossa jornada espiritual,
+          fortalecendo nossa fé e nossa ligação como uma família de cristãos.
+        </p>
+
+        <div class="container-slider">
+          <div class="container-images">
+            <img src="assets/imgs/celuladejovens.jpeg" alt="girl" class="slider on">
+            <img src="assets/imgs/igreja.jpeg" alt="girl" class="slider">
+          </div>
+        </div>
+ </div>
+  
+
+
+  </section>
+  <!-- FIM DA SESSÃO DO PROJETO -->
+
+
+  <!-- COMEÇO DA SESSÃO "QUEM SOU" -->
+
+  <section class="quem-sou">
+    <div class="container">
+      <div class="content-img">
+        <img class="imgdiego" src="assets/imgs/imgdiego.png" alt="Imagem Diego">
+      </div>
+      <div class="content-text">
+        <h2>Quem sou?</h2>
+        <p>Em meio às muitas jornadas que a vida nos oferece, a minha trajetória tem sido iluminada pela presença de
+          Deus. Com apenas 19 anos, descobri neste desafio uma forma emocionante de me conectar com a essência da fé e
+          dos ensinamentos que moldam o meu ser: a Bíblia Sagrada. Diante disso, resolvi criar um Quiz Bíblico com
+          perguntas acerca da Bíblia, fazendo com que as pessoas possam se desafiar e adquirir ainda mais conhecimento
+          bíblico.
+        </p>
+      </div>
+    </div>
+  </section>
+  <!-- FIM DA SESSÃO "QUEM SOU" -->
+
+
+  <!-- COMEÇO DO RODAPE -->
+  <footer>
+    <div class="content-footer">
+      <a href="index.html"><img src="assets/imgs/logobiblia.png"
+          alt="Logo biblia"></a>
+      <div class="links">
+        <h2>Links</h2>
+        <ul>
+          <li><a href="cadastro.html">Cadastrar-se</a></li>
+          <li><a href="login.html">Login</a></li>
         </ul>
       </div>
-    </div>
-  
-    <div class="banner">
-      <div class="container">
-        <p>Preservando <span>hoje</span> para existirem <span>amanhã</span>.</p>
-      </div>
-    </div>
-  
-    <div class="social">
-      <div class="container">
-        <div class="boxes">
-          <div class="box">
-            <img src="assets/imgs/planet-earth_color.png">
-            <h4>Missão</h4>
-            <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Et, quas cupiditate asperiores provident magnam
-              vitae illum iusto fugiat atque deleniti nulla sed iure suscipit, laborum, aliquid accusantium cum dicta
-              minima.</p>
-          </div>
-          <div class="box">
-            <img src="assets/imgs/lightbulb_color.png">
-            <h4>Visão</h4>
-            <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Et, quas cupiditate asperiores provident magnam
-              vitae illum iusto fugiat atque deleniti nulla sed iure suscipit, laborum, aliquid accusantium cum dicta
-              minima.</p>
-          </div>
-          <div class="box">
-            <img src="assets/imgs/growth_color.png">
-            <h4>Valores</h4>
-            <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Et, quas cupiditate asperiores provident magnam
-              vitae illum iusto fugiat atque deleniti nulla sed iure suscipit, laborum, aliquid accusantium cum dicta
-              minima.</p>
-          </div>
+
+      <div class="social-media">
+        <h2>Redes Sociais</h2>
+        <div class="social-img">
+          <a href="#"><img src="assets/imgs/facebooklogo.png" alt=""></a>
+          <a href="#"><img src="assets/imgs/instagramlogo.png" alt=""></a>
         </div>
       </div>
     </div>
-  
-    <div class="footer">
-      <div class="container">
-        <h4>Feito com amor por aluno &hearts; SPTech &copy; 2023</h4>
-        <span class="version">v1.0.0</span>
-      </div>
+    <div class="direitos">
+      <h3>Copyright &copy; 2023 BÍBLIQUIZ - Todos os direitos reservados. Desenvolvido por BÍBLIQUIZ </h3>
     </div>
-  </body>
+  </footer>
+  <!-- FINAL DO RODAPÉ -->
+</body>
 
 </html>
+
+<script src="js/index.js"></script>
+

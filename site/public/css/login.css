@@ -1,0 +1,178 @@
+.header {
+    width: 100%;
+    background-color: #6c3c0c;
+    z-index: 999;
+  }
+  
+  .container {
+    width: 90%;
+    margin: 0 auto;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+  
+  .header .container {
+    padding: 10px 10px;
+  }
+  
+  .header .container .imgnav {
+    width: 40%;
+    height: 50%;
+  }
+
+.banner{
+  background-image: url("https://images2.alphacoders.com/131/thumb-1920-1319552.jpeg");
+}
+  .banner .container h2{
+    color: white;
+  }
+
+  .banner .container p{
+    color: white;
+  }
+  .header .container .imgnav{
+    height: 100%;
+    width: 60px;
+  }
+  .header .container p{
+    margin-right: 700px;
+  }
+.caixa-formulario {
+    background-color: #6c3c0c;
+    width: 480px;
+    height: 450px;
+    padding: 30px;
+    border-radius: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    box-shadow: -12px 13px 7px 1px rgba(0, 0, 0, 0.817);
+    margin-left: 70px;
+}
+
+
+
+.caixa-formulario2 {
+    background-image: url("https://i.pinimg.com/originals/e2/00/13/e2001372a8e557f16e7fc32eb82feb0a.gif");
+    width: 480px;
+    height: 450px;
+    padding: 30px;
+    margin-left: 700px;
+    margin-top: -450px;
+    border-radius: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    box-shadow: -12px 13px 7px 1px rgba(0, 0, 0, 0.817);
+}
+.header .container p{
+    margin-right: 700px;
+  }
+.caixa-formulario h2 {
+    color: black;
+    font-size: 42px;
+    font-weight: 600;
+}
+
+.caixa-formulario .legenda-titulo {
+    color: #0B0333;
+    text-align: center;
+    width: 320px;
+    font-size: 15px;
+    padding-top: 5px;
+}
+
+.campo {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: flex-start;
+    padding: 0 25px;
+}
+
+.campo label {
+    color: black;
+    font-weight: 550;
+}
+
+
+.campo .campo1{
+    padding-top: 30px;
+    padding-bottom: 20px;
+}
+
+.campo .campo2 {
+    padding-bottom: 20px;
+}
+
+.campo input {
+    padding: 8px 0;
+    padding-left: 15px;
+    font-size: 12px;
+    width: 390px;
+    border-radius: 10px;
+    border: 1px solid black;
+    color: black;
+    background-color: #DBDBDB;
+}
+
+.campo1 #msg_email, #msg_senha {
+    font-size: 12px;
+    color: red;
+    padding: 5px 15px;
+}
+
+#msg_email, #msg_senha strong {
+    color: red;
+}
+
+.caixa-formulario button {
+    width: max-content;
+    color: black;
+    background-color: #f5f5dc;
+    padding: 10px 20px;
+    font-size: 1rem;
+    font-weight: 550;
+    border: 1px solid black;
+    border-radius: 12px;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.caixa-formulario button:hover { /* o ':hover' faz com que mude as características de um elemento*/
+    background-color: #f5f5dc;
+    transform: scale(1.05, 1.05);
+}
+
+.caixa-formulario button:active {
+    transform: scale(0.95, 0.95);
+}
+
+.text-login {
+    text-align: center;
+    padding-top: 20px;
+} 
+
+.text-login p {
+    color: #0B0333;
+    padding: 2px 0;
+    font-size: 0.6rem;
+}
+
+.text-login p a { 
+    color: #0B0333;
+    text-decoration: underline;
+    font-size: 0.6rem;
+}
+
+.content-footer{
+    background-color: #6c3c0c;
+
+}
+
+.footer{
+    background-color: #6c3c0c;
+}

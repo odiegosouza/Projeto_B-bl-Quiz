@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tela Inicial</title>
+    <link href="CSS/cssUsuario.css" rel="stylesheet">
+    <link rel="shortcut icon" href="assets/imgs/logobiblia.png" type="image/x-icon">
+</head>
+<body>
+    <div class="navbar">
+        <div class="logo">
+            <img src="assets/imgs/logobiblia.png" alt="Logo da Empresa" width="100">
+        </div>
+        <h2>BÍBLIQUIZ</h2>
+        <ul>  
+            <li><a href="telaUsuario.html">Início</a></li>
+            <li><a href="#">Conta</a></li>
+            <li><a href="#" onclick="biblia()">Bíblia Online</a></li>
+            <li class="logoff"><a href="login.html">Logoff</a></li>
+        </ul>
+    </div>
+    <div class="content">
+        <div class="header">
+            <h1>Bem-vindo ao BíbliQuiz</h1>
+        </div>
+        <button class="start-button" onclick="comecar()">Começar Quiz</button>
+    </div>
+
+    <div class="brown-div">
+        <h2>Escolha um nível:</h2>
+        <button style="background-color: #00ffff;"class="nivel" onclick="facil()">Fácil</button>
+        <button style="background-color: #ecec53;"class="nivel" onclick="medio()">Médio</button>
+        <button style="background-color: #ff0000;"class="nivel" onclick="dificil()">Díficil</button><br>
+    </div>
+
+    <div class="div_facil">
+     <h3>Nível Fácil</h3>
+    </div>
+
+    <div class="div_medio">
+        <h3>Nível Médio</h3>
+       </div>
+
+       <div class="div_dificil">
+        <h3>Nível Díficil</h3>
+       </div>
+
+       <div class="div_biblia">
+        <h3>Bíblia Sagrada </h3>
+        <label for="escolhaOpcao">Escolha um livro:</label>
+        <select id="escolhaOpcao">
+            <option value="gênesis">gênesis</option>
+            <option value="êxodo">êxodo</option>
+            <option value="levítico">levítico</option>
+            <option value="números">números</option>
+        </select>
+       </div>
+</body>
+</html>
+
+<script>
+    function comecar() {
+        document.querySelector('.brown-div').style.display = 'block';
+    }
+
+    function facil(){
+        document.querySelector('.div_facil').style.display = 'block';
+    }
+
+    function medio(){
+        document.querySelector('.div_medio').style.display = 'block';
+    }
+
+    function dificil(){
+        document.querySelector('.div_dificil').style.display = 'block';
+    }
+
+   function biblia(){
+            document.querySelector('.div_biblia').style.display = 'block';
+   }
+
+</script>
+
+
+

@@ -1,387 +1,390 @@
-@import url('https://fonts.googleapis.com/css2?family=Barlow:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
-
-body {
-  margin: 0;
-  padding: 0;
-  font-family: 'Barlow', "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
-  background-color: black;
+/* CABECALHO / MENU  */
+.header {
+  width: 100%;
+  background-color: #6c3c0c;
+  z-index: 999;
+  border: 0.5px solid white;
 }
 
 .container {
-  width: 80%;
-  margin: auto;
+  width: 90%;
+  margin: 0 auto;
   display: flex;
-}
-
-.header {
-  border-bottom: 3px solid #32b9cd;
+  align-items: center;
+  justify-content: space-between;
 }
 
 .header .container {
-  justify-content: space-between;
+  padding: 10px 10px;
 }
 
-.header a {
-  text-decoration: none;
-  color: #e3b062;
-}
-
-.agora {
-  font-weight: 800;
-}
-
-.navbar {
-  width: 300px;
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  list-style: none;
-  color: #e3b062;
-}
-
-
-.titulo {
-  color: #32b9cd;
-  width: fit-content;
-  font-weight: 500;
-}
-
-
-/* BANNER */
-
-.banner {
-  height: fit-content;
-  padding: 40px 0;
-  color: white;
-  background-image: url(".././assets/imgs/bg-jelly-fish-para_outras_pags.png");
-  background-size: cover;
-}
-
-.banner .container {
-  height: 400px;
-  font-size: 36px;
-  justify-content: center;
-  align-items: center;
-}
-
-.tamanho-conteudo { 
-  height: fit-content !important;
-}
-
-.banner p {
-  width: 50%;
-  margin: 0;
-  padding: 0;
-  width: 280px;
-  font-size: 36px;
-}
-
-.banner .container span {
-  font-weight: 800;
-}
-
-/* missao visao valores */
-
-.social {
-  background-color: #e5e5e5;
-  display: flex;
-}
-
-.social .container{
-  justify-content: center;
-}
-
-.box img {
-  width: 170px;
-}
-
-.social .container .boxes {
-  display: flex;
-}
-
-.social p {
-  text-align: center;
-}
-
-.box {
-  margin: 10px;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-}
-
-/* FOOTER */
-
-.footer {
-  background-color: #32b9cd;
-  height: 150px;
-  color: #fff;
-  display: flex;
-  font-size: 15px;
-}
-
-.footer .container {
-  justify-content: center;
-  text-align: center;
-}
-
-.footer .container .version {
-  font-size: 12px;
-}
-
-
-/* LOGIN */
-
-.banner .container .card {
-  background-color: #e5e5e5;
-  height: fit-content;
-  width: 400px;
-  display: flex;
-  flex-direction: column;
-  color: palevioletred;
-  align-items: center;
-  border-radius: 4px;
-}
-
-.card {
-  display: flex;
-  justify-content: space-around;
-}
-
-.card h2 {
-  font-size: 30px;
-}
-
-.card h4 {
-  font-size: 16px;
-}
-
-.banner #div_erros_login {
-  margin-top: 15px;
-}
-
-button {
-  cursor: pointer;
-}
-
-/* FORMULARIO */
-
-.alerta_erro{
-  display: flex;
-  justify-content: flex-end;
-}
-
-.card_erro {
-  display: none;
-  background-color: #fff;
-  color: black;
-  width: 230px;
-  position: fixed;
-  border-radius: 4px;
-  border: #e6005a 3px solid;
-  padding: 10px;
-  margin-right: 10%;
-}
-
-.card_erro #mensagem_erro{
-  font-weight: 500;
-  font-size: 20px;
-}
-
-.formulario .tipo_campo {
-  font-size: 20px;
-  font-weight: 600 !important;
-}
-
-.formulario {
-  display: flex;
-  flex-direction: column;
-}
-
-input {
-  margin-bottom: 10px;
-  border: 2px solid #32b9cd;
-  padding: 10px;
-  text-align: center;
-  border-radius: 10px;
-}
-
-.btn {
-  font-family: "Barlow", sans-serif;
-  border: 0;
-  border-radius: 5px;
-  font-weight: 600;
-  font-size: 18px;
-  padding: 10px 15px;
-  color: white;
-  background-color: #e6005a;
-  width: 120px;
-  align-self: center;
-  margin-top: 5px;
-}
-
-.loading-div {
-  width: 50px;
-  margin: auto;
-  display: none;
-}
-
-.loading-div img {
-  height: 50px;
-  width: 50px;
-}
-
-/* PAGINA DOS GRÁFICOS */
-
-.janela {
-  display: flex;
-  width: 100vw;
-}
-
-.header-left a {
-  text-decoration: none;
+.banner .container .caixa-formulario label{
   color: white;
 }
 
-.header-left {
-  position: fixed;
-  top: 0;
-  left: 0;
-  z-index: 999;
-  height: 100vh;
-  width: 20%;
+.content-img img{
+  border-radius: 100px;
+  margin-top: 50px;
+}
+.header .container .imgnav {
+  width: 40%;
+  height: 50%;
+}
+
+.header .container .imgnav{
+  height: 100%;
+  width: 60px;
+}
+.header .container p{
+  margin-right: 700px;
+}
+.list-items {
   display: flex;
-  flex-direction: column;
-  justify-content: space-evenly;
-  align-items: center;
-  border-right: 3px solid #32b9cd;
-  background-color: #212124;
-  /* border: 3px solid pink; */
 }
 
-.dash-right {
-  display: flex;
-  width: 80%;
-  height: fit-content;
-  background-color: #161618;
-  position: relative;
-  top: 0;
-  left: 25%;
+.list-items li {
+  padding: 0 10px;
 }
 
-.header-left h1 {
-  color: #32b9cd;
-}
-
-.hello {
-  width: 100%;
-  display: flex;
-  justify-content: center;
-}
-
-.hello h3 {
-  color: #e3b062;
-  font-weight: 300;
+.list-items li a {
   font-size: 1.2rem;
 }
 
-.hello h3 span {
-  font-weight: 800;
+.list-items li::after {
+  content: '';
+  width: 0;
+  height: 1px;
+  display: block;
+  background-color: aliceblue;
+  transition: 0.4s;
 }
 
-.btn-nav {
-  width: 40%;
-  color: white;
-  background-color: #e6005a;
-  border-radius: 5px;
-  text-align: center;
-  padding: 2% 5%;
+/* TRANSIÇÃO NOS ITEMS DA NAVBAR */
+.list-items li:hover::after {
+  width: 100%;
 }
 
-.btn-nav-white {
-  width: 40%;
-  background-color: white;
-  border: 3px solid #e6005a;
-  border-radius: 5px;
-  text-align: center;
-  padding: 2% 5%;
-}
+/*  */
+/*FIM CABECALHO / NAVBAR  */
 
-.btn-nav-white h3 {
-  color: #e6005a;
-  padding: 0;
-  margin: 0;
-}
-
-.btn-nav h3,
-.btn-logout h3 {
-  margin: 0;
-  padding: 0;
-}
-
-.btn-logout {
-  margin: 0;
-  padding: 0;
-  width: 20%;
-  background-color: #32b9cd;
-  color: white;
-  border-radius: 10px;
-  text-align: center;
-  padding: 10px 15px;
-  margin-bottom: 100px;
-  cursor: pointer;
-}
-
-/* pagina extra - simulador */
-.simulador {
-  color: white;
-
-}
-
-.simulador .container {
-  flex-direction: column
-}
-
-/* Alarme */
-#alerta {
-  position: absolute;
-  right: 0px;
-}
-
-.mensagem-alarme {
-  background-color: white;
-  border-radius: 5px;
-  width: 300px;
-  height: 80px;
-  margin: 10px;
-  display: flex;
-  justify-content: space-evenly;
-  align-items: center;
-}
-
-.mensagem-alarme h3 {
-  font-size: 14px;
-  margin: 0;
-}
-
-.mensagem-alarme .informacao {
-  margin: 10px;
-}
-
-.alarme-sino {
-  width: 48px;
-  height: 48px;
-  animation-name: bell;
-  animation-duration: 4s;
-  background-image: url('https://cdn-icons-png.flaticon.com/512/1157/1157000.png');
+/* BANNER / PRIMERIA SESSÃO DO SITE  */
+.banner {
+  width: 100%;
+  height: 570px;
+  background-image: url("https://wallpaperboat.com/wp-content/uploads/2020/06/04/43016/pink-cloud-08.jpg");
   background-size: cover;
-  animation-iteration-count: infinite;
+  padding: 30px 0;
 }
 
-@keyframes bell {
-  0%   {transform: rotate(25deg)}
-  25%  {transform: rotate(-25deg)}
-  50%  {transform: rotate(25deg)}
-  75%  {transform: rotate(-25deg)}
-  100% {transform: rotate(25deg)}
+.banner .container {
+  flex-wrap: wrap-reverse;
 }
+
+.banner .content-text a {
+  width: max-content;
+  color: black;
+  margin-right: 50px;
+}
+
+.banner .content-text h2 {
+  color: black;
+  display: flex;
+  position: relative;
+  margin-left: 250px;
+  margin-top: 80px;
+}
+
+.banner .content-text p {
+  display: flex;
+  position: relative;
+  color: black;
+  margin-left: 330px;
+  margin-top: -20px;
+}
+
+.content-img {
+  width: 50%;
+  border-radius: 5000px;
+}
+
+/* EFEITO DA IMAGEM DO NOTEBOOK SEM MEXER  */
+.content-img img:hover {
+  transform: translate(0, -10px);
+  transition: 1s;
+}
+
+.content-img2 img:hover {
+  transform: translate(0, -10px);
+  transition: 1s;
+}
+
+.content-img3 img:hover {
+  transform: translate(0, -10px);
+  transition: 1s;
+}
+.content-img4 img:hover {
+  transform: translate(0, -10px);
+  transition: 1s;
+}
+
+
+.content-img img {
+  transition: 1s;
+  width: 600px;
+  margin: auto;
+}
+
+.content-text {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+}
+
+.content-text h2 {
+  font-size: 3rem;
+  margin-bottom: 30px;
+  font-weight: 500;
+}
+
+.content-text p {
+  font-size: 1.6rem;
+  font-weight: 200;
+  text-align: justify;
+  margin-bottom: 30px;
+}
+
+.btn {
+  width: max-content;
+  font-size: 1rem;
+  padding: 15px 20px;
+  background-color: #964b00;
+  border-radius: 10px;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+
+.btncmc {
+  width: max-content;
+  font-size: 1rem;
+  padding: 15px 20px;
+  background-color: #964b00;
+  border-radius: 10px;
+  cursor: pointer;
+  transition: 0.3s;
+  margin-left: 520px;
+
+}
+
+/* EFEITO DE SUMIR A COR DO BOTÃO */
+/* EFEITO DE AUMENTAR A ESCALA DO BOTÃO */
+.btn:hover {
+  background-color: #964b00;
+  transform: scale(1.05, 1.05);
+}
+
+/* EFEITO DE DIMINUIR A ESCALA DO BOTÃO AO CLICAR */
+.btn:active {
+  transform: scale(0.95, 0.95);
+}
+
+/* FIM PRIMEIRA SESSÃO */
+
+/* INICIO DO QUEM SOU  */
+.quem-sou {
+  width: 100%;
+  padding: 60px 0;
+  background-image: url("https://wallpaperboat.com/wp-content/uploads/2020/06/04/43016/pink-cloud-08.jpg");
+  background-size: cover;
+}
+
+.quem-sou .container {
+  flex-wrap: wrap;
+}
+
+.quem-sou .container h2 {
+  color: black;
+}
+
+.quem-sou .container p {
+  color: black;
+}
+
+.quem-sou .content-text {
+  flex: 1;
+  min-height: 550px;
+  max-height: auto;
+  align-items: center;
+  justify-content: center;
+}
+
+
+.quem-sou .content-img .imgdiego {
+  float: right;
+  width: 790px;
+  margin-left: 50px;
+  border-radius: 40%;
+}
+
+.quem-sou .content-img img {
+  width: 500px;
+}
+
+/* FIM DO QUEM SOU */
+
+/* INÍCIO DO FOOTER */
+footer {
+  background-color: #6c3c0c;
+  padding: 20px 0;
+}
+
+.content-footer {
+  margin: auto;
+  width: 50%;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  height: 250px;
+}
+
+.content-footer img {
+  width: 90px;
+}
+
+.links h2 {
+  font-size: 1.5em;
+  margin-bottom: 10px;
+}
+
+.links li {
+  margin-bottom: 8px;
+  font-size: 0.90em;
+}
+
+.imagemprincipal{
+  display: flex;
+  position: relative;
+  width: 100px;
+  height: 90%;
+}
+
+.social-media h2 {
+  margin-bottom: 20px;
+  font-size: 1.5em;
+}
+
+.social-media h3 {
+  font-size: 1.5em;
+  margin: 10px 0;
+}
+
+.social-img img {
+  width: 30px;
+  margin-bottom: 20px;
+}
+
+.direitos h3 {
+  font-size: 0.80em;
+  text-align: center;
+  justify-content: center;
+}
+
+.a-destaque {
+  font-weight: bold;
+}
+
+/* estilização do Projeto */
+.Projeto {
+  width: 100%;
+  padding: 60px 0;
+  background-image: url("https://wallpaperboat.com/wp-content/uploads/2020/06/04/43016/pink-cloud-08.jpg");
+  background-size: cover;
+}
+
+
+.Projeto .content-img img {
+  width: 500px;
+  padding: 40px 0;
+  margin: auto;
+  display: block;
+  border-radius: 50px;
+}
+
+.Projeto .content-img2 img {
+  width: 500px;
+  margin-right: 50%;
+  border-radius: 50px;;
+}
+
+.Projeto .content-img4 img {
+  width: 250px;
+  margin: center;
+  border-radius: 50px;
+}
+
+.Projeto .content-img3 img {
+  width: 300px;
+  margin-right: 58px;
+  align-items: center;
+  border-radius: 50px;
+}
+
+.Projeto .content-text {
+  flex: 1;
+}
+
+.Projeto .container h2 {
+  color: black;
+}
+
+.Projeto .container p {
+  color: black;
+}
+
+
+.Projeto .content-text h2 {
+  text-align: center;
+}
+
+.Projeto .content-text p {
+  font-weight: 200;
+  text-align: justify;
+}
+
+.Projeto .container {
+  flex-wrap: wrap;
+}
+
+
+/* Carrossel */
+.container-slider {
+  display: flex;
+  width: 100%;
+  min-height: 100vh;
+  align-items: center;
+  justify-content: center;
+  gap: 1rem;
+}
+
+
+.container-images {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 850px;
+  height:500px
+}
+
+.slider {
+  opacity: 0;
+  transition: opacity .2s;
+  position: absolute;
+  width: 100%;
+  border-radius: 10px;
+}
+
+.on {
+  opacity: 1;
+}
+

@@ -1,0 +1,59 @@
+/* FONTE PADRÃO DO SITE  */
+@import url('https://fonts.googleapis.com/css2?family=Oxanium:wght@200;300;400;500;600;700;800&display=swap');
+/*  */
+
+
+/* RESETAR A ESTILIZAÇÃO PADRÃO NOS NAVEGADORES PARA NÃO OCORRER BUGS NA ESTILIZAÇÃO  */
+*,
+::before,
+::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  outline: none;
+  border: none;
+  color: #fff;
+  text-decoration: none;
+  font-family: 'Oxanium', cursive;
+  background: none;
+}
+
+/* ===== Scrollbar CSS ===== */
+/* Firefox */
+* {
+  scrollbar-width: auto;
+  scrollbar-color: #6c3c0c;
+}
+
+/* Chrome, Edge, and Safari */
+*::-webkit-scrollbar {
+  width: 5px;
+  height: 1px;
+}
+
+*::-webkit-scrollbar-track {
+  background: #f5f5dc;
+}
+
+*::-webkit-scrollbar-thumb {
+  background-color: #6c3c0c;
+  border-radius: 1px;
+  border: 2px solid #6c3c0c;
+}
+
+/* Final da scrollbar */
+
+ul {
+  list-style: none;
+}
+
+h1,
+h2,
+h3,
+h4,
+p,
+a {
+  font-size: 1rem;
+}
+
+/*  */
