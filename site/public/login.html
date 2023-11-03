@@ -52,13 +52,26 @@
                 </div>
             </div>
 
+            <div class="text-login">
+              <p>Esqueci minha <a href="#">senha</a></p>
+              <p>Não possui conta? <a href="cadastro.html">Cadastre-se</a></p>
+          </div>
+
+
+             <div class="card_erro" id="cardErro">
+                <span id="mensagem_erro"></span>
+            </div>
             <!-- Substituir o "#" do "href" pelo link da página do Dashboard -->
             <button class="btn" onclick="entrar()">Entrar</button>
+            
+            <div id="div_aguardar" class="loading-div">
+              <img src="./assets/circle-loading.gif" id="loading-gif">
+          </div>
 
-            <div class="text-login">
-                <p>Esqueci minha <a href="#">senha</a></p>
-                <p>Não possui conta? <a href="cadastro.html">Cadastre-se</a></p>
-            </div>
+          <div id="div_erros_login"></div>
+      </div>
+            
+
       
       </div>
     </div>

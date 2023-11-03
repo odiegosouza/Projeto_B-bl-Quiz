@@ -388,3 +388,37 @@ footer {
   opacity: 1;
 }
 
+.loading-div {
+  width: 50px;
+  display: none;
+}
+
+.loading-div img {
+  height: 50px;
+  width: 50px;
+}
+
+#div_erros_login {
+  display: none
+}
+
+.alerta_erro{
+  display: flex;
+  justify-content: flex-end;
+}
+
+.card_erro {
+  display: none;
+
+  color: black;
+  width: 400px;
+  position: fixed;
+  border-radius: 4px;
+  padding: 5px;
+  margin-top: 400px;
+}
+
+.card_erro #mensagem_erro{
+  font-weight: 500px;
+  font-size: 15px;
+}

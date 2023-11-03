@@ -11,6 +11,15 @@ function entrar() {
   console.log("FORM LOGIN: ", emailVar);
   console.log("FORM SENHA: ", senhaVar);
 
+  if (emailVar == "" || senhaVar == "") {
+    cardErro.style.display = "block"
+    mensagem_erro.innerHTML = "(Mensagem de erro para todos os campos em branco)";
+    finalizarAguardar();
+    return false;
+}
+else {
+    setInterval(sumirMensagem, 5000)
+}
   // Enviando uma requisição POST para o servidor com os dados de login
   fetch("/usuarios/autenticar", {
     method: "POST",
