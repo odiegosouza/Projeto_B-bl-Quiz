@@ -13,7 +13,7 @@ function entrar() {
 
   if (emailVar == "" || senhaVar == "") {
     cardErro.style.display = "block"
-    mensagem_erro.innerHTML = "(Mensagem de erro para todos os campos em branco)";
+    mensagem_erro.innerHTML = "Campo Email e Senha vazios!";
     finalizarAguardar();
     return false;
 }

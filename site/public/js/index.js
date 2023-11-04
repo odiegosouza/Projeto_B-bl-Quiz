@@ -43,12 +43,4 @@ function stopSlider() {
 
 startSlider(); // Inicia o slider automaticamente
 
-btnNext.addEventListener('click', () => {
-  nextSlider();
-  stopSlider(); // Para o slider quando o botão é clicado
-});
 
-btnPrev.addEventListener('click', () => {
-  prevSlider();
-  stopSlider(); // Para o slider quando o botão é clicado
-});

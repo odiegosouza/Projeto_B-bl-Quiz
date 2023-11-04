@@ -23,10 +23,10 @@
     <p>BÍBLIQUIZ</p>
     <nav class="navbar">
       <ul class="list-items">
-        <li><a class="a-destaque" href="index.html">Home</a></li>
+        <li><a href="index.html">Home</a></li>
         <li><a href="index.html">Projeto</a></li>
         <li><a href="cadastro.html">Cadastro</a></li>
-        <li><a href="login.html">Login</a></li>
+        <li><a class="a-destaque" href="login.html">Login</a></li>
       </ul>
     </nav>
   </div>
@@ -123,7 +123,7 @@
 
         if (emailVar == "" || senhaVar == "") {
             cardErro.style.display = "block"
-            mensagem_erro.innerHTML = "(Mensagem de erro para todos os campos em branco)";
+            mensagem_erro.innerHTML = "Campo Email e Senha vazios!";
             finalizarAguardar();
             return false;
         }
