@@ -113,19 +113,6 @@
   transition: 1s;
 }
 
-.content-img2 img:hover {
-  transform: translate(0, -10px);
-  transition: 1s;
-}
-
-.content-img3 img:hover {
-  transform: translate(0, -10px);
-  transition: 1s;
-}
-.content-img4 img:hover {
-  transform: translate(0, -10px);
-  transition: 1s;
-}
 
 
 .content-img img {
@@ -358,9 +345,6 @@ footer {
 
 
 /* Carrossel */
-
-
-
 
 .container-images {
   width: 20%;
