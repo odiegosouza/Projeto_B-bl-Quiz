@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -7,13 +8,14 @@
     <link href="CSS/cssUsuario.css" rel="stylesheet">
     <link rel="shortcut icon" href="assets/imgs/logobiblia.png" type="image/x-icon">
 </head>
+
 <body>
     <div class="navbar">
         <div class="logo">
             <img src="assets/imgs/logobiblia.png" alt="Logo da Empresa" width="100">
         </div>
         <h2>BÍBLIQUIZ</h2>
-        <ul>  
+        <ul>
             <li><a href="telaUsuario.html">Início</a></li>
             <li><a href="#">Conta</a></li>
             <li class="logoff"><a href="login.html">Logoff</a></li>
@@ -28,32 +30,60 @@
 
     <div class="brown-div">
         <h2>Escolha um nível:</h2>
-        <button style="background-color: #00ffff;"class="nivel" onclick="facil()">Fácil</button>
-        <button style="background-color: #ecec53;"class="nivel" onclick="medio()">Médio</button>
-        <button style="background-color: #ff0000;"class="nivel" onclick="dificil()">Díficil</button><br>
+        <button style="background-color: #00ffff;" class="nivel" onclick="facil()">Fácil</button>
+        <button style="background-color: #ecec53;" class="nivel" onclick="medio()">Médio</button>
+        <button style="background-color: #ff0000;" class="nivel" onclick="dificil()">Díficil</button><br>
     </div>
 
     <div class="div_facil">
-     <h3>Nível Fácil</h3>
+        <h3>Nível Fácil</h3>
 
-     <div id="quiz"></div>
-     <button id="submit">Resultados</button>
-     <div id="results"></div>
- 
-     <script  src="js/quiz1.js"></script>
 
+        <div class="container">
+            <h2>QUAL É O PRIMEIRO LIVRO DA BÍBLIA?</h2>
+            <hr>
+            <input type="radio" name="question1" id="correct1">Gênesis<br>
+            <input type="radio" name="question1">Mateus<br>
+            <input type="radio" name="question1">Lucas<br>
+            <input type="radio" name="question1">Marcos<br>
+            <button class="next" onclick="next(1)">Próxima</button>
+        </div>
+
+        <div class="container">
+            <h2>QUANTOS ERAM OS DISCÍPULOS DE JESUS?</h2>
+            <hr>
+            <input type="radio" name="question2">10<br>
+            <input type="radio" name="question2" id="correct2">12<br>
+            <input type="radio" name="question2">7<br>
+            <input type="radio" name="question2">8<br>
+            <button class="next" onclick="next(2)">Próxima</button>
+        </div>
+
+        <div class="container">
+            <h2>QUAL A CIDADE EM QUE JESUS NASCEU?</h2>
+            <hr>
+            <input type="radio" name="question3">Nazaré<br>
+            <input type="radio" name="question3">Egito<br>
+            <input type="radio" name="question3">Jerusalém<br>
+            <input type="radio" name="question3" id="correct3">Belém<br>
+            <button onclick="result()">Resultado</button>
+
+            <link href="css/questionfacil.css" rel="stylesheet">
+            <script src="js/questionario1.js"></script>
+        </div>
     </div>
 
     <div class="div_medio">
         <h3>Nível Médio</h3>
-       </div>
+    </div>
 
-       <div class="div_dificil">
+    <div class="div_dificil">
         <h3>Nível Díficil</h3>
-       </div>
+    </div>
 
-      
+
 </body>
+
 </html>
 
 <script>
@@ -61,20 +91,17 @@
         document.querySelector('.brown-div').style.display = 'block';
     }
 
-    function facil(){
+    function facil() {
         document.querySelector('.div_facil').style.display = 'block';
     }
 
-    function medio(){
+    function medio() {
         document.querySelector('.div_medio').style.display = 'block';
     }
 
-    function dificil(){
+    function dificil() {
         document.querySelector('.div_dificil').style.display = 'block';
     }
 
 
 </script>
-
-
-

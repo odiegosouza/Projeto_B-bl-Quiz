@@ -1,0 +1,11 @@
+    
+        .container {
+          border-radius: 10px;
+          width: 60%;
+          padding: 20px;
+          display: none;
+      }
+
+      button {
+          margin-top: 10px;
+      }
