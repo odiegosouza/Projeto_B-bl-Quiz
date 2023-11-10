@@ -170,7 +170,7 @@ button {
 }
 
 .check input:checked+label {
-    color: green;
+    color: greenyellow;
 }
 
 .alerta {

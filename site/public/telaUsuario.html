@@ -7,6 +7,7 @@
     <title>Tela Inicial</title>
     <link href="CSS/cssUsuario.css" rel="stylesheet">
     <link rel="shortcut icon" href="assets/imgs/logobiblia.png" type="image/x-icon">
+
 </head>
 
 <body>
@@ -35,42 +36,22 @@
         <button style="background-color: #ff0000;" class="nivel" onclick="dificil()">Díficil</button><br>
     </div>
 
+
     <div class="div_facil">
-        <h3>Nível Fácil</h3>
+        <h2>NÍVEL FÁCIL</h2>
+        <main>
+            <div class="content">
+                <span class="spnQtd"></span>
+                <span class="question"></span>
+                <div class="answers"></div>
+            </div>
+            <div class="finish">
+                <span></span>
+                <button>Reiniciar</button>
+            </div>
+        </main>
 
-
-        <div class="container">
-            <h2>QUAL É O PRIMEIRO LIVRO DA BÍBLIA?</h2>
-            <hr>
-            <input type="radio" name="question1" id="correct1">Gênesis<br>
-            <input type="radio" name="question1">Mateus<br>
-            <input type="radio" name="question1">Lucas<br>
-            <input type="radio" name="question1">Marcos<br>
-            <button class="next" onclick="next(1)">Próxima</button>
-        </div>
-
-        <div class="container">
-            <h2>QUANTOS ERAM OS DISCÍPULOS DE JESUS?</h2>
-            <hr>
-            <input type="radio" name="question2">10<br>
-            <input type="radio" name="question2" id="correct2">12<br>
-            <input type="radio" name="question2">7<br>
-            <input type="radio" name="question2">8<br>
-            <button class="next" onclick="next(2)">Próxima</button>
-        </div>
-
-        <div class="container">
-            <h2>QUAL A CIDADE EM QUE JESUS NASCEU?</h2>
-            <hr>
-            <input type="radio" name="question3">Nazaré<br>
-            <input type="radio" name="question3">Egito<br>
-            <input type="radio" name="question3">Jerusalém<br>
-            <input type="radio" name="question3" id="correct3">Belém<br>
-            <button onclick="result()">Resultado</button>
-
-            <link href="css/questionfacil.css" rel="stylesheet">
-            <script src="js/questionario1.js"></script>
-        </div>
+        <script src="js/script.js" type="module"></script>
     </div>
 
     <div class="div_medio">
@@ -102,6 +83,7 @@
     function dificil() {
         document.querySelector('.div_dificil').style.display = 'block';
     }
+
 
 
 </script>
