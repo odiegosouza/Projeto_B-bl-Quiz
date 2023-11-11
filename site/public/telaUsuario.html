@@ -11,6 +11,7 @@
 </head>
 
 <body>
+
     <div class="navbar">
         <div class="logo">
             <img src="assets/imgs/logobiblia.png" alt="Logo da Empresa" width="100">
@@ -19,6 +20,7 @@
         <ul>
             <li><a href="telaUsuario.html">Início</a></li>
             <li><a href="#">Conta</a></li>
+            <li><a href="#" onclick="devocional()">Devocional</a></li>
             <li class="logoff"><a href="login.html">Logoff</a></li>
         </ul>
     </div>
@@ -26,14 +28,23 @@
         <div class="header">
             <h1>Bem-vindo ao BíbliQuiz</h1>
         </div>
+
         <button class="start-button" onclick="comecar()">Começar Quiz</button>
     </div>
+
+    <div class="perfil">
+        <img src="assets/imgs/imgdiego.png" alt="Foto do Perfil">
+    </div>
+
+
+
 
     <div class="brown-div">
         <h2>Escolha um nível:</h2>
         <button style="background-color: #00ffff;" class="nivel" onclick="facil()">Fácil</button>
         <button style="background-color: #ecec53;" class="nivel" onclick="medio()">Médio</button>
         <button style="background-color: #ff0000;" class="nivel" onclick="dificil()">Díficil</button><br>
+        <a href="telaUsuario.html" class="voltar">Voltar</a>
     </div>
 
 
@@ -52,6 +63,7 @@
         </main>
 
         <script src="js/script.js" type="module"></script>
+        <a href="telaUsuario.html" class="voltar">Voltar</a>
     </div>
 
     <div class="div_medio">
@@ -62,6 +74,17 @@
         <h3>Nível Díficil</h3>
     </div>
 
+
+    <div class="devocional_div">
+        <h3>Devocional Diário</h3>
+        <div id="exibir"></div>
+        <button onclick="exibirDevocional()">Ver versículo</button>
+        <a href="telaUsuario.html" class="voltar">Voltar</a>
+    </div>
+
+  <div class="exibir">
+    <div id="exibir"></div>
+</div>
 
 </body>
 
@@ -84,6 +107,24 @@
         document.querySelector('.div_dificil').style.display = 'block';
     }
 
+    function devocional() {
+        document.querySelector('.devocional_div').style.display = 'block';
+    }
 
+    // Declarei o vetor e a função fora da função devocional
+    const meuVetor = ['Graças ao grande amor do Senhor é que não somos consumidos, pois as suas misericórdias são inesgotáveis.Renovam-se cada manhã;grande é a sua fidelidade! <br> Lamentações 3:22-23','Não se amoldem ao padrão deste mundo, mas transformem-se pela renovação da sua mente, para que sejam capazes de experimentar e comprovar a boa, agradável e perfeita vontade de Deus. <Br> Romanos 12:2','Busquem, pois, em primeiro lugar o Reino de Deus e a sua justiça, e todas essas coisas lhes serão acrescentadas. <BR> Mateus 6:33','"Não andem ansiosos por coisa alguma, mas em tudo, pela oração e súplicas, e com ação de graças, apresentem seus pedidos a Deus." <Br> Filipenses 4:6','E a paz de Deus, que excede todo o entendimento, guardará os seus corações e as suas mentes em Cristo Jesus. <Br> Filipenses 4:7','"Eu disse essas coisas para que em mim vocês tenham paz. Neste mundo vocês terão aflições; contudo, tenham ânimo! Eu venci o mundo". <Br> João 16:33','Consagre ao Senhortudo o que você faz, e os seus planos serão bem-sucedidos. <Br> Provérbios 16:3','se o meu povo, que se chama pelo meu nome, se humilhar e orar, buscar a minha face e se afastar dos seus maus caminhos, dos céus o ouvirei, perdoarei o seu pecado e curarei a sua terra. <Br> 2 Crônicas 7:14', 'O Senhor é o meu pastor; de nada terei falta.-<Br> Salmos 23:1','Pois Deus não nos deu espírito de covardia, mas de poder, de amor e de equilíbrio. <br> 2 Timóteo 1:7','Tudo posso naquele que me fortalece.-<br> Filipenses 4:13','Portanto, eu digo: Tudo o que vocês pedirem em oração, creiam que já o receberam, e assim sucederá. <Br> Marcos 11:24','Não fui eu que ordenei a você? Seja forte e corajoso! Não se apavore nem desanime, pois o Senhor, o seu Deus, estará com você por onde você andar. <br> Josué 1:9'];
+
+    function obterValorAleatorio(vetor) {
+        var indiceAleatorio = Math.floor(Math.random() * vetor.length);
+        return vetor[indiceAleatorio];
+    }
+
+    function exibirDevocional() {
+        // Obtive o valor aleatório
+        var valorAleatorio = obterValorAleatorio(meuVetor);
+
+        // Exibi dentro da div 
+        document.getElementById('exibir').innerHTML = `<span style="color: white">${valorAleatorio}</span>`;
+    }
 
 </script>

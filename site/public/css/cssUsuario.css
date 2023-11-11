@@ -1,4 +1,5 @@
-body, html {
+body,
+html {
   height: 100%;
   margin: 0;
   display: flex;
@@ -13,11 +14,11 @@ body {
 
 .navbar {
   width: 200px;
-  background-color:#6c3c0c;
+  background-color: #6c3c0c;
   padding: 20px;
-  box-shadow: 2px 0px 5px 0px rgba(0,0,0,0.1);
+  box-shadow: 2px 0px 5px 0px rgba(0, 0, 0, 0.1);
   overflow: hidden;
-    height: 100vh; 
+  height: 100vh;
 }
 
 .logo {
@@ -68,13 +69,16 @@ body {
   margin-top: 220px;
 }
 
-.navbar a:hover, .navbar s:hover {
+.navbar a:hover,
+.navbar s:hover {
   background-color: #ddd;
 }
-.navbar h2{
+
+.navbar h2 {
   color: white;
   margin-left: 35px;
 }
+
 .content {
   flex: 1;
   display: flex;
@@ -101,7 +105,7 @@ body {
   cursor: pointer;
   margin-top: 20px;
   margin-left: 300px;
-  box-shadow: 10px 5px 10px 5px rgba(0,0,0,0.1);
+  box-shadow: 10px 5px 10px 5px rgba(0, 0, 0, 0.1);
 }
 
 .start-button:hover {
@@ -119,10 +123,30 @@ body {
   display: none;
 }
 
+.perfil {
+  position: fixed;
+  top: 10px;
+  right: 10px;
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
+  overflow: hidden;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+}
+
+.perfil img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 50%;
+}
+
+
 .brown-div {
   width: 800px;
   height: 500px;
-  background-color: #6c3c0c;
+  background-image: url("https://app.blogunigranead.com/wp-content/uploads/2021/03/Capa-Pinterest-min.jpg");
+  background-size: cover;
   border: 2px solid white;
   border-radius: 10px;
   position: fixed;
@@ -147,6 +171,36 @@ body {
   margin-top: 120px;
 }
 
+.brown-div .voltar {
+  background-color: black;
+  width: 5%;
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  color: #fff;
+  padding: 10px;
+  justify-content: center;
+  display: flex;
+  border-radius: 10px;
+  border: 1px solid white;
+  text-decoration: none;
+}
+
+.devocional_div .voltar {
+  background-color: black;
+  width: 5%;
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  color: #fff;
+  padding: 10px;
+  justify-content: center;
+  display: flex;
+  border-radius: 10px;
+  border: 1px solid white;
+  text-decoration: none;
+  font-size: 15px;
+}
 
 .div_facil {
   width: 800px;
@@ -162,8 +216,24 @@ body {
   margin-left: 100px;
 }
 
-.div_facil h3{
- margin-left: 350px;
+.div_facil .voltar{
+  background-color: black;
+  width: 5%;
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  color: #fff;
+  padding: 10px;
+  justify-content: center;
+  display: flex;
+  border-radius: 10px;
+  border: 1px solid white;
+  text-decoration: none;
+  font-size: 15px;
+}
+
+.div_facil h3 {
+  margin-left: 350px;
 }
 
 .div_medio {
@@ -180,9 +250,9 @@ body {
   margin-left: 100px;
 }
 
-.div_medio h3{
+.div_medio h3 {
   margin-left: 350px;
- }
+}
 
 .div_dificil {
   width: 800px;
@@ -198,18 +268,18 @@ body {
   margin-left: 100px;
 }
 
-.div_dificil h3{
+.div_dificil h3 {
   margin-left: 350px;
- }
+}
 
- .div_Facil body {
+.div_Facil body {
   height: 100vh;
   display: flex;
   align-items: center;
   justify-content: center;
   flex-direction: column;
   gap: 5px;
-  background: linear-gradient(90deg, rgba(91,30,159,1) 0%, rgba(77,39,182,1) 100%);
+  background: linear-gradient(90deg, rgba(91, 30, 159, 1) 0%, rgba(77, 39, 182, 1) 100%);
 }
 
 .div_Facil body h2 {
@@ -243,7 +313,7 @@ main {
   margin-top: -50px;
 }
 
-.question{
+.question {
   font-size: 20px;
   width: 500px;
   justify-content: center;
@@ -269,20 +339,60 @@ main {
   text-align: center;
 }
 
-.div_Facil h2{
+.div_Facil h2 {
   justify-content: center;
   display: flex;
   margin-right: -500px;
 }
 
-.div_facil  h2{
+.div_facil h2 {
   justify-content: center;
   display: flex;
 }
 
-.div_facil  .main{
+.div_facil .main {
   justify-content: center;
   display: flex;
 }
 
 
+.div_facil .main .content .answers button.answers {
+  width: 50px;
+}
+
+.devocional_div {
+  width: 500px;
+  height: 500px;
+  background-image: url('https://img.freepik.com/fotos-premium/um-simbolo-de-amor-e-oracao-cruz-ao-por-do-sol_582637-1476.jpg');
+  background-size: cover;
+  border: 2px solid white;
+  border-radius: 10px;
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  display: none;
+  margin-left: 100px;
+  font-size: 20px;
+}
+
+.devocional_div h3 {
+  color: white;
+  display: flex;
+  justify-content: center;
+
+}
+
+.devocional_div button {
+  width: 25%;
+  height: 5%;
+  border-radius: 100px;
+  background-color: white;
+  display: flex;
+  justify-content: center;
+  margin-left: 38%;
+  margin-top: 200px;
+  font-size: 15px;
+  cursor: pointer;
+  box-shadow: 10px 5px 10px 5px rgba(0, 0, 0, 0.1);
+}
