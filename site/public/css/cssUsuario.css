@@ -12,13 +12,21 @@ body {
   flex: 1;
 }
 
-.navbar {
+body .navbar {
   width: 200px;
   background-color: #6c3c0c;
   padding: 20px;
   box-shadow: 2px 0px 5px 0px rgba(0, 0, 0, 0.1);
   overflow: hidden;
-  height: 100vh;
+  position: fixed;
+  height: 100%;
+  z-index: 1000;
+}
+
+h1 {
+  font-size: 20px;
+  margin-top: 700px;
+  margin-left: -90px;
 }
 
 .logo {
@@ -36,16 +44,20 @@ body {
   margin-bottom: 10px;
 }
 
+.myChartjs{
+ margin-top: 100px;
+ width: 500px;
+ margin-left: 300px;
+}
 
 .navbar .logoff {
-  position: absolute;
   width: 200px;
   margin-left: -10px;
   bottom: 0;
   text-decoration: none;
-  display: block;
   padding: 10px;
   transition: background-color 0.3s;
+  margin-top: 260px;
 }
 
 .navbar a {
@@ -79,7 +91,7 @@ body {
   margin-left: 35px;
 }
 
-.content {
+body .content {
   flex: 1;
   display: flex;
   justify-content: center;
@@ -103,8 +115,8 @@ body {
   padding: 15px 30px;
   font-size: 16px;
   cursor: pointer;
-  margin-top: 20px;
-  margin-left: 300px;
+  margin-top: 10px;
+  margin-left: 200px;
   box-shadow: 10px 5px 10px 5px rgba(0, 0, 0, 0.1);
 }
 
@@ -113,14 +125,10 @@ body {
 }
 
 .quiz-container {
-  width: 400px;
-  height: 200px;
-  border: 2px solid #6c3c0c;
-  border-radius: 5px;
-  padding: 20px;
-  background-color: white;
-  text-align: center;
-  display: none;
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 .perfil {
@@ -155,6 +163,7 @@ body {
   transform: translate(-50%, -50%);
   display: none;
   margin-left: 100px;
+  margin-top: -30px;
 }
 
 .brown-div h2 {
@@ -202,9 +211,10 @@ body {
   font-size: 15px;
 }
 
+/** div fácil principal */
 .div_facil {
   width: 800px;
-  height: 500px;
+  height: 560px;
   background-color: #00ffff;
   border: 2px solid white;
   border-radius: 10px;
@@ -216,26 +226,8 @@ body {
   margin-left: 100px;
 }
 
-.div_facil .voltar{
-  background-color: black;
-  width: 5%;
-  position: absolute;
-  bottom: 0;
-  right: 0;
-  color: #fff;
-  padding: 10px;
-  justify-content: center;
-  display: flex;
-  border-radius: 10px;
-  border: 1px solid white;
-  text-decoration: none;
-  font-size: 15px;
-}
 
-.div_facil h3 {
-  margin-left: 350px;
-}
-
+/** div médio principal */
 .div_medio {
   width: 800px;
   height: 500px;
@@ -250,10 +242,8 @@ body {
   margin-left: 100px;
 }
 
-.div_medio h3 {
-  margin-left: 350px;
-}
 
+/** div dificil principal */
 .div_dificil {
   width: 800px;
   height: 500px;
@@ -272,94 +262,7 @@ body {
   margin-left: 350px;
 }
 
-.div_Facil body {
-  height: 100vh;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  flex-direction: column;
-  gap: 5px;
-  background: linear-gradient(90deg, rgba(91, 30, 159, 1) 0%, rgba(77, 39, 182, 1) 100%);
-}
-
-.div_Facil body h2 {
-  color: white;
-}
-
-
-
-
-main {
-  background-color: transparent;
-  padding: 10px;
-  border-radius: 10px;
-  width: 200px;
-  max-width: 300px;
-  min-height: 200px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-
-.content {
-  display: flex;
-  flex-direction: column;
-  width: 100%;
-  gap: 10px;
-}
-
-.spnQtd {
-  text-align: end;
-  margin-top: -50px;
-}
-
-.question {
-  font-size: 20px;
-  width: 500px;
-  justify-content: center;
-  display: flex;
-  margin-left: 300px;
-}
-
-
-.answers {
-  display: flex;
-  flex-direction: column;
-  gap: 5px;
-}
-
-
-.finish {
-  display: none;
-  flex-direction: column;
-  gap: 10px;
-}
-
-.finish button {
-  text-align: center;
-}
-
-.div_Facil h2 {
-  justify-content: center;
-  display: flex;
-  margin-right: -500px;
-}
-
-.div_facil h2 {
-  justify-content: center;
-  display: flex;
-}
-
-.div_facil .main {
-  justify-content: center;
-  display: flex;
-}
-
-
-.div_facil .main .content .answers button.answers {
-  width: 50px;
-}
-
+/* div devocional */
 .devocional_div {
   width: 500px;
   height: 500px;
@@ -396,3 +299,140 @@ main {
   cursor: pointer;
   box-shadow: 10px 5px 10px 5px rgba(0, 0, 0, 0.1);
 }
+
+
+/* div curiosidades */
+.div_curiosidades {
+  width: 1000px;
+  height: 600px;
+  background-color:#6c3c0c;
+  border: 2px solid white;
+  border-radius: 10px;
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  display: none;
+  margin-left: 120px;
+  font-size: 20px;
+}
+
+.div_curiosidades h3 {
+  color: white;
+  display: flex;
+  justify-content: center;
+}
+
+
+
+h3 {
+  color: white; /* Cor do título */
+}
+
+ul {
+  list-style-type: none; /* Remover marcadores de lista padrão */
+  padding: 0;
+}
+
+.div_curiosidades ul li {
+  margin-bottom: 30px; /* Espaçamento entre itens da lista */
+  color: white;
+  display: flex;
+  justify-content: center;
+}
+
+.div_curiosidades ul button{
+  background-color: white;
+  color: black;
+  border: none;
+  border-radius: 5px;
+  padding: 15px 30px;
+  font-size: 16px;
+  cursor: pointer;
+  box-shadow: 10px 5px 10px 5px rgba(0, 0, 0, 0.1);
+  justify-content: center;
+  margin-left: 400px;
+}
+
+
+
+/* adicionando dentro da div facil */
+.quiz-container {
+  text-align: center;
+  background-color: transparent;
+  padding: 20px;
+  border-radius: 8px;
+  height:80vh;
+}
+
+.div_facil h2{
+  display: flex;
+  justify-content: center;
+}
+
+.button {
+  padding: 10px 20px;
+  margin: 10px;
+  font-size: 16px;
+  cursor: pointer;
+  background-color: #6c3c0c;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  box-shadow: 10px 5px 10px 5px rgba(0, 0, 0, 0.1);
+}
+
+.button:hover {
+  background-color: #ccc;
+}
+
+.hide {
+  display: none;
+}
+
+.questions-container {
+  margin-top: -200px;
+}
+
+.question {
+  font-size: 30px;
+  margin-bottom: 10px;
+}
+
+.answer {
+  display: block;
+  width: 100%;
+  padding: 10px;
+  margin-bottom: 10px;
+  font-size: 16px;
+  cursor: pointer;
+  background-color: #6c3c0c;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+}
+
+.answer:hover {
+  background-color: #ccc;
+
+}
+
+.correct {
+  background-color: #28a745;
+  color: #fff;
+}
+
+.incorrect {
+  background-color: #dc3545;
+  color: #fff;
+}
+
+.final-message {
+  font-size: 18px;
+  margin-bottom: 20px;
+}
+
+.final-message span {
+  font-weight: bold;
+}
+
+
