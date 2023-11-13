@@ -354,6 +354,296 @@ ul {
   margin-left: 400px;
 }
 
+.div_curiosidades button:hover {
+  background-color: #ccc;
+}
+
+
+.div_curiosidades .voltar {
+  background-color: black;
+  width: 5%;
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  color: #fff;
+  padding: 10px;
+  justify-content: center;
+  display: flex;
+  border-radius: 10px;
+  border: 1px solid white;
+  text-decoration: none;
+}
+
+/* div livros antigo testamento */
+.div_livroantigo {
+  width: 1000px;
+  height: 600px;
+  background-image: url("https://media.istockphoto.com/id/868054620/pt/foto/image-of-open-antique-book-on-wooden-table-with-glitter-background.jpg?s=612x612&w=0&k=20&c=aLDd64FDmFWf8Io2qIxH2WFStmN0g5tSsZ-8-9HXIBc=");
+  background-size: cover;
+  border: 2px solid white;
+  border-radius: 10px;
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  display: none;
+  margin-left: 120px;
+  font-size: 20px;
+}
+
+.div_livroantigo h3 {
+  color: black;
+  display: flex;
+  justify-content: center;
+}
+
+.div_livroantigo h4 {
+  color: white;
+  display: flex;
+  justify-content: center;
+}
+
+.botaonovotestamento{
+  padding: 10px 20px;
+  margin: 10px;
+  font-size: 16px;
+  cursor: pointer;
+  background-color: #6c3c0c;
+  color: white;
+  border: 1px solid white;
+  border-radius: 4px;
+  box-shadow: 10px 5px 10px 5px rgba(0, 0, 0, 0.1);
+  margin-left: 400px;
+}
+
+.div_livroantigo .voltar {
+  background-color: black;
+  width: 5%;
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  color: #fff;
+  padding: 10px;
+  justify-content: center;
+  display: flex;
+  border-radius: 10px;
+  border: 1px solid white;
+  text-decoration: none;
+}
+
+
+/* div livros novo testamento */
+.div_livrosnovo {
+  width: 1000px;
+  height: 600px;
+  background-color: #6c3c0c;
+  border: 2px solid white;
+  border-radius: 10px;
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  display: none;
+  margin-left: 120px;
+  font-size: 20px;
+}
+
+.div_livrosnovo h3 {
+  color: white;
+  display: flex;
+  justify-content: center;
+}
+
+.div_livrosnovo h4 {
+  color: white;
+  display: flex;
+  justify-content: center;
+}
+
+.div_livrosnovo .voltar {
+  background-color: black;
+  width: 5%;
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  color: #fff;
+  padding: 10px;
+  justify-content: center;
+  display: flex;
+  border-radius: 10px;
+  border: 1px solid white;
+  text-decoration: none;
+}
+
+
+/* div mandamentos*/
+
+.div_mandamentos {
+  width: 1000px;
+  height: 600px;
+  background-color: #6c3c0c;
+  border: 2px solid white;
+  border-radius: 10px;
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  display: none;
+  margin-left: 120px;
+  font-size: 20px;
+}
+
+.div_mandamentos h3 {
+  color: white;
+  display: flex;
+  justify-content: center;
+}
+
+.div_mandamentos .antigo{
+  color: white;
+  display: flex;
+  justify-content: left;
+  margin-top: -450px;
+}
+
+.div_mandamentos img{
+  width: 450px;
+  height: 450px;
+  margin-left: 500px;
+
+}
+
+.div_mandamentos .voltar {
+  background-color: black;
+  width: 5%;
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  color: #fff;
+  padding: 10px;
+  justify-content: center;
+  display: flex;
+  border-radius: 10px;
+  border: 1px solid white;
+  text-decoration: none;
+}
+
+
+
+
+/*div autores */
+.div_autores {
+  width: 1000px;
+  height: 600px;
+  background-color:#6c3c0c;
+  border: 2px solid white;
+  border-radius: 10px;
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  display: none;
+  margin-left: 120px;
+  font-size: 20px;
+}
+
+.div_autores h3 {
+  color: white;
+  display: flex;
+  justify-content: center;
+
+}
+
+.div_autores h4 {
+  color: white;
+  display: flex;
+  justify-content: center;
+  margin-top: -200px;
+}
+
+.div_autores p{
+  color: white;
+}
+
+.autoresdireita{
+  margin-left: 150px;
+  margin-top: -25px;
+}
+
+.div_autores img{
+  width: 200px;
+  height: 200px;
+  margin-left: 700px;
+  border-radius: 15px;
+}
+
+.div_autores .voltar {
+  background-color: black;
+  width: 5%;
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  color: #fff;
+  padding: 10px;
+  justify-content: center;
+  display: flex;
+  border-radius: 10px;
+  border: 1px solid white;
+  text-decoration: none;
+}
+
+
+
+/*div Jesus chorou */
+.div_jesuschorou {
+  width: 1000px;
+  height: 600px;
+  background-image: url("https://media.tenor.com/7ApljgI5Z1sAAAAd/chorando-chorar.gif");
+  background-size: cover;
+  border: 2px solid white;
+  border-radius: 10px;
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  display: none;
+  margin-left: 120px;
+  font-size: 20px;
+}
+
+.div_jesuschorou h3 {
+  color: white;
+  display: flex;
+  justify-content: center;
+}
+
+.div_jesuschorou p {
+  color: white;
+}
+
+
+.div_jesuschorou .voltar {
+  background-color: black;
+  width: 5%;
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  color: #fff;
+  padding: 10px;
+  justify-content: center;
+  display: flex;
+  border-radius: 10px;
+  border: 1px solid white;
+  text-decoration: none;
+}
+
+
+
+
+
+
+
+
 
 
 /* adicionando dentro da div facil */
@@ -370,6 +660,8 @@ ul {
   justify-content: center;
 }
 
+
+
 .button {
   padding: 10px 20px;
   margin: 10px;
@@ -381,6 +673,7 @@ ul {
   border-radius: 4px;
   box-shadow: 10px 5px 10px 5px rgba(0, 0, 0, 0.1);
 }
+
 
 .button:hover {
   background-color: #ccc;
