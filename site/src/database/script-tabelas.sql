@@ -6,115 +6,73 @@
 comandos para mysql - banco local - ambiente de desenvolvimento
 */
 
-CREATE DATABASE aquatech;
+create database BibliQuiz;
 
-USE aquatech;
+use BibliQuiz;
 
-CREATE TABLE empresa (
-	id INT PRIMARY KEY AUTO_INCREMENT,
-	razao_social VARCHAR(50),
-	cnpj VARCHAR(14)
+-- criando as tabelas --
+
+create table Usuario (
+idUsuario int primary key auto_increment,
+nome varchar(45),
+email varchar(45),
+senha varchar(45)
 );
 
-CREATE TABLE usuario (
-	id INT PRIMARY KEY AUTO_INCREMENT,
-	nome VARCHAR(50),
-	email VARCHAR(50),
-	senha VARCHAR(50),
-	fk_empresa INT,
-	FOREIGN KEY (fk_empresa) REFERENCES empresa(id)
+create table Quiz (
+idQuiz int primary key,
+tipo varchar(45)
 );
 
-CREATE TABLE aviso (
-	id INT PRIMARY KEY AUTO_INCREMENT,
-	titulo VARCHAR(100),
-	descricao VARCHAR(150),
-	fk_usuario INT,
-	FOREIGN KEY (fk_usuario) REFERENCES usuario(id)
+create table Questoes (
+idQuestoes int primary key,
+descricao varchar(100),
+opcoes varchar(1),
+fkQuizQuestoes int, constraint fkQuizQuestoes foreign key (fkQuizQuestoes) references Quiz(idQuiz)
 );
 
-create table aquario (
-/* em nossa regra de negócio, um aquario tem apenas um sensor */
-	id INT PRIMARY KEY AUTO_INCREMENT,
-	descricao VARCHAR(300),
-	fk_empresa INT,
-	FOREIGN KEY (fk_empresa) REFERENCES empresa(id)
+
+create table Feedback (
+idFeedback int primary key auto_increment,
+comentario varchar(260),
+nota varchar(10)
 );
 
-/* esta tabela deve estar de acordo com o que está em INSERT de sua API do arduino - dat-acqu-ino */
-
-create table medida (
-	id INT PRIMARY KEY AUTO_INCREMENT,
-	dht11_umidade DECIMAL,
-	dht11_temperatura DECIMAL,
-	luminosidade DECIMAL,
-	lm35_temperatura DECIMAL,
-	chave TINYINT,
-	momento DATETIME,
-	fk_aquario INT,
-	FOREIGN KEY (fk_aquario) REFERENCES aquario(id)
+create table Tentativa (
+idTentativa int auto_increment,
+fkQuiz int,
+fkUsuario int,
+PRIMARY KEY (idTentativa, fkQuiz, fkUsuario),
+fkFeedback int, constraint fkFeedback foreign key (fkFeedback) references Feedback(idFeedback),
+qtd_acertos varchar(45)
 );
 
-insert into empresa (razao_social, cnpj) values ('Empresa 1', '00000000000000');
+-- inserindo os dados --
 
-/*
-comando para sql server - banco remoto - ambiente de produção
-*/
+insert into Quiz (idQuiz, tipo) values
+(1,'fácil'),
+(2,'médio'),
+(3,'díficil');
 
-CREATE TABLE empresa (
-	id INT PRIMARY KEY IDENTITY(1,1),
-	razao_social VARCHAR(50),
-	cnpj VARCHAR(14)
-);
+insert into Questoes (idQuestoes, descricao, opcoes, fkQuizQuestoes) values
+(1,'Uau! foi muito bem','a','1');
 
-CREATE TABLE usuario (
-	id INT PRIMARY KEY IDENTITY(1,1),
-	nome VARCHAR(50),
-	email VARCHAR(50),
-	senha VARCHAR(50),
-	fk_empresa INT FOREIGN KEY REFERENCES empresa(id)
-);
+select * from Usuario;
 
-CREATE TABLE aviso (
-	id INT PRIMARY KEY IDENTITY(1,1),
-	titulo VARCHAR(100),
-	descricao VARCHAR(150),
-	fk_usuario INT FOREIGN KEY REFERENCES usuario(id)
-);
 
-create table aquario (
-/* em nossa regra de negócio, um aquario tem apenas um sensor */
-	id INT PRIMARY KEY IDENTITY(1,1),
-	descricao VARCHAR(300),
-	fk_empresa INT FOREIGN KEY REFERENCES empresa(id)
-);
 
-/* esta tabela deve estar de acordo com o que está em INSERT de sua API do arduino - dat-acqu-ino */
-
-CREATE TABLE medida (
-	id INT PRIMARY KEY IDENTITY(1,1),
-	dht11_umidade DECIMAL,
-	dht11_temperatura DECIMAL,
-	luminosidade DECIMAL,
-	lm35_temperatura DECIMAL,
-	chave TINYINT,
-	momento DATETIME,
-	fk_aquario INT FOREIGN KEY REFERENCES aquario(id)
-);
-
-insert into empresa (razao_social, cnpj) values ('Empresa 1', '00000000000000');
 
 /*
 comandos para criar usuário em banco de dados azure, sqlserver,
 com permissão de insert + update + delete + select
 */
 
-CREATE USER [usuarioParaAPIWebDataViz_datawriter_datareader]
-WITH PASSWORD = '#Gf_senhaParaAPIWebDataViz',
-DEFAULT_SCHEMA = dbo;
+-- CREATE USER [usuarioParaAPIWebDataViz_datawriter_datareader]
+-- WITH PASSWORD = '#Gf_senhaParaAPIWebDataViz',
+-- DEFAULT_SCHEMA = dbo;
 
-EXEC sys.sp_addrolemember @rolename = N'db_datawriter',
-@membername = N'usuarioParaAPIWebDataViz_datawriter_datareader';
+-- EXEC sys.sp_addrolemember @rolename = N'db_datawriter',
+-- @membername = N'usuarioParaAPIWebDataViz_datawriter_datareader';
 
-EXEC sys.sp_addrolemember @rolename = N'db_datareader',
-@membername = N'usuarioParaAPIWebDataViz_datawriter_datareader';
+-- EXEC sys.sp_addrolemember @rolename = N'db_datareader',
+-- @membername = N'usuarioParaAPIWebDataViz_datawriter_datareader';
