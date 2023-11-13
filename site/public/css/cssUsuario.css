@@ -9,7 +9,6 @@ html {
 body {
   font-family: Arial, sans-serif;
   background-image: url("https://wallpaperboat.com/wp-content/uploads/2020/06/04/43016/pink-cloud-08.jpg");
-  flex: 1;
 }
 
 body .navbar {
@@ -44,11 +43,7 @@ h1 {
   margin-bottom: 10px;
 }
 
-.myChartjs{
- margin-top: 100px;
- width: 500px;
- margin-left: 300px;
-}
+
 
 .navbar .logoff {
   width: 200px;
@@ -57,7 +52,7 @@ h1 {
   text-decoration: none;
   padding: 10px;
   transition: background-color 0.3s;
-  margin-top: 210px;
+  margin-top: 160px;
 }
 
 .navbar a {
@@ -510,6 +505,7 @@ ul {
   width: 450px;
   height: 450px;
   margin-left: 500px;
+  border-radius: 50px;
 
 }
 
@@ -638,6 +634,73 @@ ul {
 }
 
 
+/*div dashboard*/
+.div_dashboard {
+  width: 1000px;
+  height: 600px;
+  background-color: burlywood;
+  border: 2px solid white;
+  border-radius: 10px;
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  display: none;
+  margin-left: 120px;
+  font-size: 20px;
+}
+
+
+.div_dashboard h1 {
+color: white;
+}
+
+.mychartantigo{
+  margin-left: 50px;;
+}
+
+.div_dashboard h2.novotestamento {
+  color: black;
+  margin-left: 600px;
+  margin-top: -230px;
+  }
+  
+.myChartjs{
+  margin-top: 50px;
+  width: 300px;
+  margin-left: 10px;
+ }
+
+ .myChartjs2{
+  margin-top: 50px;
+  width: 300px;
+  margin-left: 600px;
+ }
+
+ .myChartjs3{
+  margin-top: 10px;
+  width: 300px;
+  margin-left: 300px;
+ }
+
+ .mychartparabolas{
+  margin-left: 400px;;
+}
+
+.div_dashboard .voltar {
+  background-color: black;
+  width: 5%;
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  color: #fff;
+  padding: 10px;
+  justify-content: center;
+  display: flex;
+  border-radius: 10px;
+  border: 1px solid white;
+  text-decoration: none;
+}
 
 
 
@@ -727,5 +790,3 @@ ul {
 .final-message span {
   font-weight: bold;
 }
-
-

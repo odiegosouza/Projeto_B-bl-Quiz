@@ -23,6 +23,7 @@
             <li><a href="#" onclick="comecar()">Quiz</a></li>
             <li><a href="#" onclick="devocional()">Devocional</a></li>
             <li><a href="#" onclick="curiosidades()">Curiosidades</a></li>
+            <li><a href="#" onclick="dashboard()">Dashboard</a></li>
             <li class="logoff"><a href="login.html">Logoff</a></li>
         </ul>
     </div>
@@ -33,18 +34,6 @@
         <button class="start-button" onclick="comecar()">Começar Quiz</button>
     </div>
     </div>
-
-
-    <!-- <div class="myChartjs">
-        <canvas id="myChart" style="position: relative; height:40vh; width:40vw"></canvas>
-    </div> -->
-
-    <!-- <div class="perfil">
-        <img src="assets/imgs/imgdiego.png" alt="Foto do Perfil">
-    </div>
- -->
-
-
 
     <div class="brown-div">
         <h2>Escolha um nível:</h2>
@@ -201,7 +190,7 @@
     </div>
 
     <div class="div_jesuschorou">
-        <h3>Livros - Novo Testamento</h3>
+        <h3>JOÃO 11-35</h3>
         <div class="antigo">
             <p>"Jesus chorou" é um versículo curto, mas profundamente significativo, encontrado no Evangelho de João,
                 capítulo 11, versículo 35. O contexto desse versículo é a história da ressurreição de Lázaro.</p>
@@ -222,7 +211,32 @@
     </div>
 
 
+   <div class="div_dashboard">
+    <div class="mychartantigo">
+    <h2>Antigo Testamento</h2>
+    <div class="myChartjs">
+        <canvas id="myChart" style="position: relative; height:40vh; width:40vw"></canvas>
+    </div> 
+</div>
+    <h2 class="novotestamento">Novo Testamento</h2>
 
+    <div class="myChartjs2">
+        <canvas id="myChart2" style="position: relative; height:40vh; width:40vw"></canvas>
+    </div> 
+
+    <!-- <div class="mychartparabolas"> -->
+    <h2 class="mychartparabolas">Parábolas</h2>
+
+    <div class="myChartjs3">
+        <canvas id="myChart3" style="position: relative; height:40vh; width:40vw"></canvas>
+    </div> 
+<!-- </div> -->
+
+    <a href="telaUsuario.html" class="voltar">Voltar</a>
+
+   </div>
+
+   
     <div class="exibir">
         <div id="exibir"></div>
     </div>
@@ -274,6 +288,10 @@
 
     function vermandamentos() {
         document.querySelector('.div_mandamentos').style.display = 'block';
+    }
+
+    function dashboard() {
+        document.querySelector('.div_dashboard').style.display = 'block';
     }
 
 
@@ -338,37 +356,110 @@
         document.getElementById('exibir').innerHTML = `<span style="color: white">${valorAleatorio}</span>`;
     }
 
+ /* mychart velho testamento */
+        const labels = [
+            'ACERTOS E ERROS',
+        ];
 
-    //     const labels = [
-    //         'ACERTOS E ERROS',
-    //     ];
+        const data = {
+            labels: labels,
+            datasets: [{
+                label: 'ACERTOS',
+                backgroundColor: 'rgb(0, 128, 0)',
+                data: [4],
+            },
+            {
+                label: 'ERROS',
+                backgroundColor: 'rgb(255, 0, 0)',
 
-    //     const data = {
-    //         labels: labels,
-    //         datasets: [{
-    //             label: 'ACERTOS',
-    //             backgroundColor: 'rgb(0, 128, 0)',
-    //             data: [4],
-    //         },
-    //         {
-    //             label: 'ERROS',
-    //             backgroundColor: 'rgb(255, 0, 0)',
+                data: [6],
+            }]
+        };
 
-    //             data: [6],
-    //         }]
-    //     };
+        const config = {
+            type: 'bar',
+            data: data,
+            options: {}
+        };
 
-    //     const config = {
-    //         type: 'bar',
-    //         data: data,
-    //         options: {}
-    //     };
+        const myChart = new Chart(
+            document.getElementById('myChart'),
+            config
+        );
 
-    //     const myChart = new Chart(
-    //         document.getElementById('myChart'),
-    //         config
-    //     );
-    // </script>
+
+
+
+ /* mychart novo testamento */
+
+        const labels2 = [
+            'ACERTOS E ERROS',
+        ];
+
+        const data2 = {
+            labels2: labels2,
+            datasets: [{
+                label: 'ACERTOS',
+                backgroundColor: 'rgb(0, 128, 0)',
+                data: [4],
+            },
+            {
+                label: 'ERROS',
+                backgroundColor: 'rgb(255, 0, 0)',
+
+                data: [6],
+            }]
+        };
+
+        const config2 = {
+            type: 'bar',
+            data: data,
+            options: {}
+        };
+
+        const myChart2 = new Chart(
+            document.getElementById('myChart2'),
+            config2
+        );
+
+
+ /* mychart parábolas */
+
+ const labels3 = [
+            'ACERTOS E ERROS',
+        ];
+
+        const data3 = {
+            labels3: labels3,
+            datasets: [{
+                label: 'ACERTOS',
+                backgroundColor: 'rgb(0, 128, 0)',
+                data: [4],
+            },
+            {
+                label: 'ERROS',
+                backgroundColor: 'rgb(255, 0, 0)',
+
+                data: [6],
+            }]
+        };
+
+        const config3 = {
+            type: 'bar',
+            data: data,
+            options: {}
+        };
+
+        const myChart3 = new Chart(
+            document.getElementById('myChart3'),
+            config3
+        );
+
+
+
+
+
+</script>
 
 
 
