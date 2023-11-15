@@ -24,13 +24,15 @@ idQuiz int primary key,
 tipo varchar(45)
 );
 
+
+/* não irei usar essa tabela, farei as questoes no proprio vetor
 create table Questoes (
 idQuestoes int primary key,
 descricao varchar(100),
 opcoes varchar(1),
 fkQuizQuestoes int, constraint fkQuizQuestoes foreign key (fkQuizQuestoes) references Quiz(idQuiz)
 );
-
+*/
 
 create table Feedback (
 idFeedback int primary key auto_increment,
@@ -47,15 +49,7 @@ fkFeedback int, constraint fkFeedback foreign key (fkFeedback) references Feedba
 qtd_acertos varchar(45)
 );
 
--- inserindo os dados --
 
-insert into Quiz (idQuiz, tipo) values
-(1,'fácil'),
-(2,'médio'),
-(3,'díficil');
-
-insert into Questoes (idQuestoes, descricao, opcoes, fkQuizQuestoes) values
-(1,'Uau! foi muito bem','a','1');
 
 select * from Usuario;
 

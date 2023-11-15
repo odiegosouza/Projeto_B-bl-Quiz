@@ -357,17 +357,16 @@ ul {
 .div_curiosidades .voltar {
   background-color: black;
   width: 5%;
-  position: absolute;
   bottom: 0;
   right: 0;
   color: #fff;
-  padding: 10px;
-  justify-content: center;
+  padding: 5px;
   display: flex;
   border-radius: 10px;
   border: 1px solid white;
   text-decoration: none;
 }
+
 
 /* div livros antigo testamento */
 .div_livroantigo {
@@ -662,25 +661,28 @@ color: white;
 .div_dashboard h2.novotestamento {
   color: black;
   margin-left: 600px;
-  margin-top: -230px;
+  margin-top: -290px;
   }
+  
+
+  /* mycharts */
   
 .myChartjs{
   margin-top: 50px;
-  width: 300px;
+  width: 200px;
   margin-left: 10px;
  }
 
  .myChartjs2{
   margin-top: 50px;
-  width: 300px;
+  width: 200px;
   margin-left: 600px;
  }
 
  .myChartjs3{
   margin-top: 10px;
-  width: 300px;
-  margin-left: 300px;
+  width: 200px;
+  margin-left: 380px;
  }
 
  .mychartparabolas{

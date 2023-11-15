@@ -100,6 +100,8 @@
         </ul>
     </div>
 
+
+
     <div class="div_livroantigo">
         <h3>Livros - Antigo Testamento</h3>
         <div class="antigo">
@@ -211,32 +213,32 @@
     </div>
 
 
-   <div class="div_dashboard">
-    <div class="mychartantigo">
-    <h2>Antigo Testamento</h2>
-    <div class="myChartjs">
-        <canvas id="myChart" style="position: relative; height:40vh; width:40vw"></canvas>
-    </div> 
-</div>
-    <h2 class="novotestamento">Novo Testamento</h2>
+    <div class="div_dashboard">
+        <div class="mychartantigo">
+            <h2>Antigo Testamento</h2>
+            <div class="myChartjs">
+                <canvas id="myChart" style="position: relative; height:30vh; width:30vw"></canvas>
+            </div>
+        </div>
+        <h2 class="novotestamento">Novo Testamento</h2>
 
-    <div class="myChartjs2">
-        <canvas id="myChart2" style="position: relative; height:40vh; width:40vw"></canvas>
-    </div> 
+        <div class="myChartjs2">
+            <canvas id="myChart2" style="position: relative; height:30vh; width:30vw"></canvas>
+        </div>
 
-    <!-- <div class="mychartparabolas"> -->
-    <h2 class="mychartparabolas">Parábolas</h2>
+        <!-- <div class="mychartparabolas"> -->
+        <h2 class="mychartparabolas">Parábolas</h2>
 
-    <div class="myChartjs3">
-        <canvas id="myChart3" style="position: relative; height:40vh; width:40vw"></canvas>
-    </div> 
-<!-- </div> -->
+        <div class="myChartjs3">
+            <canvas id="myChart3" style="position: relative; height:30vh; width: 30vw"></canvas>
+        </div>
+        <!-- </div> -->
 
-    <a href="telaUsuario.html" class="voltar">Voltar</a>
+        <a href="telaUsuario.html" class="voltar">Voltar</a>
 
-   </div>
+    </div>
 
-   
+
     <div class="exibir">
         <div id="exibir"></div>
     </div>
@@ -268,6 +270,10 @@
 
     function curiosidades() {
         document.querySelector('.div_curiosidades').style.display = 'block';
+    }
+
+    function avancar() {
+        document.querySelector('.div_avancar').style.display = 'block';
     }
 
     function vercuriosidadelivros() {
@@ -356,104 +362,96 @@
         document.getElementById('exibir').innerHTML = `<span style="color: white">${valorAleatorio}</span>`;
     }
 
- /* mychart velho testamento */
-        const labels = [
-            'ACERTOS E ERROS',
-        ];
+    /* mychart velho testamento */
+    const data = {
+        labels: [
+            'Erros',
+            'Acertos',
 
-        const data = {
-            labels: labels,
-            datasets: [{
-                label: 'ACERTOS',
-                backgroundColor: 'rgb(0, 128, 0)',
-                data: [4],
-            },
-            {
-                label: 'ERROS',
-                backgroundColor: 'rgb(255, 0, 0)',
+        ],
+        datasets: [{
+            label: 'My First Dataset',
+            data: [4,6],
+            backgroundColor: [
+                'rgb(255,0,0)',
+                'rgb(0,255,0)',
 
-                data: [6],
-            }]
-        };
+            ],
+            hoverOffset: 4
+        }]
+    };
 
-        const config = {
-            type: 'bar',
-            data: data,
-            options: {}
-        };
+    const config = {
+        type: 'doughnut',
+        data: data,
+    };
 
-        const myChart = new Chart(
-            document.getElementById('myChart'),
-            config
-        );
+    const myChart = new Chart(
+        document.getElementById('myChart'),
+        config
+    );
 
 
 
 
- /* mychart novo testamento */
+    /* mychart novo testamento */
 
-        const labels2 = [
-            'ACERTOS E ERROS',
-        ];
+    const data2 = {
+        labels: [
+            'Erros',
+            'Acertos',
 
-        const data2 = {
-            labels2: labels2,
-            datasets: [{
-                label: 'ACERTOS',
-                backgroundColor: 'rgb(0, 128, 0)',
-                data: [4],
-            },
-            {
-                label: 'ERROS',
-                backgroundColor: 'rgb(255, 0, 0)',
+        ],
+        datasets: [{
+            label: 'My First Dataset',
+            data: [4,6],
+            backgroundColor: [
+                'rgb(255,0,0)',
+                'rgb(0,255,0)',
+            ],
+            hoverOffset: 4
+        }]
+    };
 
-                data: [6],
-            }]
-        };
+    const config2 = {
+        type: 'doughnut',
+        data: data,
+    };
 
-        const config2 = {
-            type: 'bar',
-            data: data,
-            options: {}
-        };
-
-        const myChart2 = new Chart(
-            document.getElementById('myChart2'),
-            config2
-        );
+    const myChart2 = new Chart(
+        document.getElementById('myChart2'),
+        config2
+    );
 
 
- /* mychart parábolas */
+    /* mychart parábolas */
 
- const labels3 = [
-            'ACERTOS E ERROS',
-        ];
+    const data3 = {
+        labels: [
+            'Erros',
+            'Acertos',
 
-        const data3 = {
-            labels3: labels3,
-            datasets: [{
-                label: 'ACERTOS',
-                backgroundColor: 'rgb(0, 128, 0)',
-                data: [4],
-            },
-            {
-                label: 'ERROS',
-                backgroundColor: 'rgb(255, 0, 0)',
+        ],
+        datasets: [{
+            label: 'My First Dataset',
+             data: [4,6],
+            backgroundColor: [
+                'rgb(255,0,0)',
+                'rgb(0,255,0)',
+            ],
+            hoverOffset: 4
+        }]
+    };
 
-                data: [6],
-            }]
-        };
+    const config3 = {
+        type: 'doughnut',
+        data: data,
+    };
 
-        const config3 = {
-            type: 'bar',
-            data: data,
-            options: {}
-        };
-
-        const myChart3 = new Chart(
-            document.getElementById('myChart3'),
-            config3
-        );
+    const myChart3 = new Chart(
+        document.getElementById('myChart3'),
+        config3
+    );
 
 
 
