@@ -83,6 +83,8 @@ function selectAnswer(event) {
   currentQuestionIndex++;
 }
 
+
+
 // Função para finalizar o jogo e exibir a pontuação
 function finishGame() {
   var totalQuestions = questions.length;
@@ -108,10 +110,15 @@ function finishGame() {
       <span>Resultado: ${message}</span>
     </p>
     <button 
-      onclick=window.location.reload() 
-      class="button">Voltar</button>
+      onclick="limpartela()" class="button">Voltar</button>
   `;
 }
+function limpartela(){
+  document.querySelector('.brown-div').style.display = 'none';
+  document.querySelector('.div_facil').style.display = 'none';
+}
+
+
 
 // Array de perguntas e respostas
 
@@ -207,3 +214,229 @@ var questions = [
     ],
   },
 ];
+
+
+
+
+function comecar() {
+ limpargeral('.brown-div');
+}
+
+function facil() {
+  limpargeral('.div_facil');
+}
+
+function medio() {
+  limpargeral('.div_medio');
+}
+
+function dificil() {
+  limpargeral('.div_dificl');
+}
+
+function devocional() {
+  limpargeral('.devocional_div');
+}
+
+function curiosidades() {
+  limpargeral('.div_curiosidades');
+}
+
+function avancar() {
+  limpargeral('.div_avancar'); 
+}
+
+function vercuriosidadelivros() {
+  limpargeral('.div_livroantigo');
+}
+
+function novo() {
+  limpargeral('div_livrosnovo'); 
+}
+
+function verjesuschorou() {
+  limpargeral('.div_jesuschorou');
+}
+
+function verautores() {
+  limpargeral('.div_autores');
+}
+
+function vermandamentos() {
+  limpargeral('.div_mandamentos');
+}
+
+function dashboard() {
+  document.querySelector('.div_dashboard').style.display = 'block';
+  myChart.data.datasets[0].data[0] = totalCorrect;
+  myChart.data.datasets[0].data[1] = questions.length - totalCorrect;
+  myChart.update();
+}
+
+
+
+function limpargeral(tela){
+  document.querySelector('.brown-div').style.display = 'none';
+  document.querySelector('.div_facil').style.display = 'none';
+  document.querySelector('.div_medio').style.display = 'none';
+  document.querySelector('.div_dificil').style.display = 'none';
+  document.querySelector('.devocional_div').style.display = 'none';
+  document.querySelector('.div_curiosidades').style.display = 'none';
+  document.querySelector('.div_livroantigo').style.display = 'none';
+  document.querySelector('.div_livrosnovo').style.display = 'none';
+  document.querySelector('.div_jesuschorou').style.display = 'none';
+  document.querySelector('.div_autores').style.display = 'none';
+  document.querySelector('.div_mandamentos').style.display = 'none';
+  document.querySelector(tela).style.display = 'block';
+}
+
+
+
+
+// Declarando o vetor e a função fora da função devocional
+const meuVetor = ["Porque eu bem sei os pensamentos que tenho a vosso respeito, diz o SENHOR; pensamentos de paz, e não de mal, para vos dar o fim que esperais. - Jeremias 29:11",
+  "Tudo posso naquele que me fortalece. - Filipenses 4:13",
+  "O SENHOR é o meu pastor; nada me faltará. - Salmo 23:1",
+  "O amor é paciente, é benigno; o amor não arde em ciúmes, não se ufana, não se ensoberbece. - 1 Coríntios 13:4",
+  "Honra a teu pai e a tua mãe, para que se prolonguem os teus dias na terra que o SENHOR, teu Deus, te dá. - Êxodo 20:12",
+  "Bem-aventurados os mansos, porque herdarão a terra. - Mateus 5:5",
+  "Mas buscai primeiro o seu reino e a sua justiça, e todas estas coisas vos serão acrescentadas. - Mateus 6:33",
+  "Confia no SENHOR de todo o teu coração e não te estribes no teu próprio entendimento. - Provérbios 3:5",
+  "Deus é o nosso refúgio e fortaleza, socorro bem presente na angústia. - Salmo 46:1",
+  "O SENHOR te abençoe e te guarde; o SENHOR faça resplandecer o seu rosto sobre ti e te conceda graça. - Números 6:24-25",
+  "Eu sou o caminho, e a verdade, e a vida; ninguém vem ao Pai senão por mim. - João 14:6",
+  "Aquele que não ama não conhece a Deus; porque Deus é amor. - 1 João 4:8",
+  "Toda Escritura é divinamente inspirada e proveitosa para ensinar, para repreender, para corrigir, para instruir em justiça. - 2 Timóteo 3:16",
+  "Porque Deus não nos deu o espírito de covardia, mas de poder, de amor e de moderação. - 2 Timóteo 1:7",
+  "O SENHOR é o meu rochedo, e o meu lugar forte, e o meu libertador; o meu Deus, a minha fortaleza, em quem confio. - Salmo 18:2",
+  "O que for fiel no pouco, também é fiel no muito; o que é injusto no pouco, também é injusto no muito. - Lucas 16:10",
+  "Vinde a mim, todos os que estais cansados e oprimidos, e eu vos aliviarei. - Mateus 11:28",
+  "Eis que estou à porta e bato; se alguém ouvir a minha voz e abrir a porta, entrarei em sua casa e com ele cearei, e ele, comigo. - Apocalipse 3:20",
+  "No princípio era o Verbo, e o Verbo estava com Deus, e o Verbo era Deus. - João 1:1",
+  "O SENHOR reina; regozije-se a terra; alegrem-se as muitas ilhas. - Salmo 97:1",
+  "Bem-aventurado o homem que não anda segundo o conselho dos ímpios, não se detém no caminho dos pecadores, nem se assenta na roda dos escarnecedores. - Salmo 1:1",
+  "O SENHOR é a minha luz e a minha salvação; a quem temerei? O SENHOR é a força da minha vida; de quem me recearei? - Salmo 27:1",
+  "O coração alegre aformoseia o rosto, mas pela dor do coração o espírito se abate. - Provérbios 15:13",
+  "O meu mandamento é este: Que vos ameis uns aos outros, assim como eu vos amei. - João 15:12",
+  "Santificai-vos, pois, e sede santos, pois eu sou o SENHOR, vosso Deus. - Levítico 20:7",
+  "O SENHOR te abençoe e te guarde; o SENHOR faça resplandecer o seu rosto sobre ti e te conceda graça. - Números 6:24",
+  "Bem-aventurados os que choram, porque eles serão consolados. - Mateus 5:4",
+  "Portanto, agora, permanecem a fé, a esperança e o amor, estes três; mas o maior destes é o amor. - 1 Coríntios 13:13",
+  "Porque aos seus anjos dará ordens a teu respeito, para que te guardem em todos os teus caminhos. - Salmo 91:11",
+  "E o SENHOR irá à sua frente; sim, o Deus de Israel será a sua retaguarda. - Isaías 52:12",
+  "O SENHOR é bom, um refúgio em tempos de angústia. Ele conhece os que nele confiam. - Naum 1:7",
+  "Ensina-nos a contar os nossos dias, de tal maneira que alcancemos corações sábios. - Salmo 90:12",
+  "Não temas, porque eu sou contigo; não te assombres, porque eu sou o teu Deus; eu te fortaleço, e te ajudo, e te sustento com a minha destra vitoriosa. - Isaías 41:10",
+  "Fica quieto diante do SENHOR e espera com paciência por ele; não te irrites por causa da pessoa que prospera em seu caminho, por causa do homem que executa astutos intentos. - Salmo 37:7",
+  "O SENHOR é a minha força e o meu cântico; ele me salvou. - Êxodo 15:2",
+  "Alegrem-se sempre no Senhor; outra vez digo, alegrem-se! - Filipenses 4:4",
+  "O SENHOR é misericordioso e compassivo, longânimo e assaz benigno. - Salmo 103:8",
+  "Os que confiam no SENHOR são como o monte Sião, que não se abala, mas permanece para sempre. - Salmo 125:1",
+  "Porque eu sei que o meu Redentor vive e por fim se levantará sobre a terra. - Jó 19:25",
+  "O SENHOR é a minha luz e a minha salvação; a quem temerei? O SENHOR é a força da minha vida; de quem me recearei? - Salmo 27:1",];
+
+function obterValorAleatorio(vetor) {
+  var indiceAleatorio = Math.floor(Math.random() * vetor.length);
+  return vetor[indiceAleatorio];
+}
+
+function exibirDevocional() {
+  // Obtive o valor aleatório
+  var valorAleatorio = obterValorAleatorio(meuVetor);
+
+  // Exibi dentro da div 
+  document.getElementById('exibir').innerHTML = `<span style="color: white">${valorAleatorio}</span>`;
+}
+
+/* mychart velho testamento */
+const data = {
+  labels: [
+      'Acertos',
+      'Erros',
+
+  ],
+  datasets: [{
+      label: 'My First Dataset',
+      data: [,],
+      backgroundColor: [
+          'rgb(0,255,0)',
+          'rgb(255,0,0)',
+
+      ],
+      hoverOffset: 4
+  }]
+};
+
+const config = {
+  type: 'doughnut',
+  data: data,
+};
+
+const myChart = new Chart(
+  document.getElementById('myChart'),
+  config
+);
+
+
+
+
+/* mychart novo testamento */
+
+const data2 = {
+  labels: [
+      'Erros',
+      'Acertos',
+
+  ],
+  datasets: [{
+      label: 'My First Dataset',
+      data: [4,6],
+      backgroundColor: [
+          'rgb(255,0,0)',
+          'rgb(0,255,0)',
+      ],
+      hoverOffset: 4
+  }]
+};
+
+const config2 = {
+  type: 'doughnut',
+  data: data,
+};
+
+const myChart2 = new Chart(
+  document.getElementById('myChart2'),
+  config2
+);
+
+
+/* mychart parábolas */
+
+const data3 = {
+  labels: [
+      'Erros',
+      'Acertos',
+
+  ],
+  datasets: [{
+      label: 'My First Dataset',
+       data: [4,6],
+      backgroundColor: [
+          'rgb(255,0,0)',
+          'rgb(0,255,0)',
+      ],
+      hoverOffset: 4
+  }]
+};
+
+const config3 = {
+  type: 'doughnut',
+  data: data,
+};
+
+const myChart3 = new Chart(
+  document.getElementById('myChart3'),
+  config3
+);
+
+
