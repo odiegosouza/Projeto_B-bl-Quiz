@@ -1,3 +1,4 @@
+
 // Seleção de elementos HTML usando classes
 var $startGameButton = document.querySelector(".start-quiz");
 var $nextQuestionButton = document.querySelector(".next-question");
@@ -110,12 +111,8 @@ function finishGame() {
       <span>Resultado: ${message}</span>
     </p>
     <button 
-      onclick="limpartela()" class="button">Voltar</button>
+      onclick="dashboard()" class="button">Dashboard</button>
   `;
-}
-function limpartela(){
-  document.querySelector('.brown-div').style.display = 'none';
-  document.querySelector('.div_facil').style.display = 'none';
 }
 
 
@@ -278,8 +275,6 @@ function dashboard() {
 function limpargeral(tela){
   document.querySelector('.brown-div').style.display = 'none';
   document.querySelector('.div_facil').style.display = 'none';
-  document.querySelector('.div_medio').style.display = 'none';
-  document.querySelector('.div_dificil').style.display = 'none';
   document.querySelector('.devocional_div').style.display = 'none';
   document.querySelector('.div_curiosidades').style.display = 'none';
   document.querySelector('.div_livroantigo').style.display = 'none';
@@ -356,8 +351,8 @@ const data = {
 
   ],
   datasets: [{
-      label: 'My First Dataset',
-      data: [,],
+      label: '',
+      data: [ , ],
       backgroundColor: [
           'rgb(0,255,0)',
           'rgb(255,0,0)',
@@ -375,68 +370,6 @@ const config = {
 const myChart = new Chart(
   document.getElementById('myChart'),
   config
-);
-
-
-
-
-/* mychart novo testamento */
-
-const data2 = {
-  labels: [
-      'Erros',
-      'Acertos',
-
-  ],
-  datasets: [{
-      label: 'My First Dataset',
-      data: [4,6],
-      backgroundColor: [
-          'rgb(255,0,0)',
-          'rgb(0,255,0)',
-      ],
-      hoverOffset: 4
-  }]
-};
-
-const config2 = {
-  type: 'doughnut',
-  data: data,
-};
-
-const myChart2 = new Chart(
-  document.getElementById('myChart2'),
-  config2
-);
-
-
-/* mychart parábolas */
-
-const data3 = {
-  labels: [
-      'Erros',
-      'Acertos',
-
-  ],
-  datasets: [{
-      label: 'My First Dataset',
-       data: [4,6],
-      backgroundColor: [
-          'rgb(255,0,0)',
-          'rgb(0,255,0)',
-      ],
-      hoverOffset: 4
-  }]
-};
-
-const config3 = {
-  type: 'doughnut',
-  data: data,
-};
-
-const myChart3 = new Chart(
-  document.getElementById('myChart3'),
-  config3
 );
 
 

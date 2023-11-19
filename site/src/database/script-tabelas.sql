@@ -37,7 +37,7 @@ fkQuizQuestoes int, constraint fkQuizQuestoes foreign key (fkQuizQuestoes) refer
 create table Feedback (
 idFeedback int primary key auto_increment,
 comentario varchar(260),
-nota varchar(10)
+nota decimal(4,2)
 );
 
 create table Tentativa (
