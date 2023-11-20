@@ -554,8 +554,7 @@ ul {
 .div_dashboard {
   width: 1000px;
   height: 600px;
-  background-color: burlywood;
-  border: 2px solid white;
+  background-color: transparent;
   border-radius: 10px;
   position: fixed;
   top: 50%;
@@ -577,13 +576,13 @@ margin-left: 150px;
   /* mycharts */
   
 .mychartantigo{
-  margin-left: 90px;
+  margin-left: 400px;
   margin-top: 90px;
 }
 
 .myChartjs{
   margin-top: 60px;
-  width: 200px;
+  width: 250px;
   margin-left: 300px;
  }
 

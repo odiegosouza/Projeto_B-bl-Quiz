@@ -125,7 +125,10 @@ function finishGame() {
       <p style="color: ${color};">Pergunta ${index + 1}: ${result.question} - ${resultText}</p>
     `;
   });
+  dashboard();
 }
+
+
 
 
 
@@ -233,14 +236,6 @@ function comecar() {
 
 function facil() {
   limpargeral('.div_facil');
-}
-
-function medio() {
-  limpargeral('.div_medio');
-}
-
-function dificil() {
-  limpargeral('.div_dificl');
 }
 
 function devocional() {
