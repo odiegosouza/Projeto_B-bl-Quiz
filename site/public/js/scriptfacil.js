@@ -1,4 +1,3 @@
-
 // Seleção de elementos HTML usando classes
 var $startGameButton = document.querySelector(".start-quiz");
 var $nextQuestionButton = document.querySelector(".next-question");
@@ -7,11 +6,12 @@ var $questionText = document.querySelector(".question");
 var $answersContainer = document.querySelector(".answers-container");
 var $answers = document.querySelectorAll(".answer");
 
-// iniciar as variaveis
+// Iniciar as variáveis
 var currentQuestionIndex = 0;
 var totalCorrect = 0;
+var results = [];  // Vetor para armazenar os resultados
 
-// Adiciona ouvintes de eventos aos botões $
+// Adiciona ouvintes de eventos aos botões
 $startGameButton.addEventListener("click", startGame);
 $nextQuestionButton.addEventListener("click", displayNextQuestion);
 
@@ -60,13 +60,19 @@ function resetState() {
 // Função para processar a seleção de uma resposta
 function selectAnswer(event) {
   var answerClicked = event.target;
+  var result = {};
 
   if (answerClicked.dataset.correct) {
     document.body.classList.add("correct");
     totalCorrect++;
+    result.correct = true;
   } else {
     document.body.classList.add("incorrect");
+    result.correct = false;
   }
+
+  result.question = questions[currentQuestionIndex].question;
+  results.push(result);
 
   // Desabilita todas as respostas e destaca a resposta correta/incorreta
   document.querySelectorAll(".answer").forEach((button) => {
@@ -83,8 +89,6 @@ function selectAnswer(event) {
   $nextQuestionButton.classList.remove("hide");
   currentQuestionIndex++;
 }
-
-
 
 // Função para finalizar o jogo e exibir a pontuação
 function finishGame() {
@@ -104,6 +108,7 @@ function finishGame() {
     message = "Parabéns, você acertou tudo!";
   }
 
+
   // Atualizar o conteúdo do contêiner de perguntas com a mensagem final e o botão para refazer o teste
   $questionsContainer.innerHTML = `
     <p class="final-message">
@@ -113,6 +118,16 @@ function finishGame() {
     <button 
       onclick="dashboard()" class="button">Dashboard</button>
   `;
+
+
+  // Exibir os resultados
+  results.forEach((result, index) => {
+    var resultText = result.correct ? "Acertou" : "Errou";
+    var color = result.correct ? "darkgreen" : "red";
+    $questionsContainer.innerHTML += `
+      <p style="color: ${color};">Pergunta ${index + 1}: ${result.question} - ${resultText}</p>
+    `;
+  });
 }
 
 
@@ -243,14 +258,6 @@ function avancar() {
   limpargeral('.div_avancar'); 
 }
 
-function vercuriosidadelivros() {
-  limpargeral('.div_livroantigo');
-}
-
-function novo() {
-  limpargeral('div_livrosnovo'); 
-}
-
 function verjesuschorou() {
   limpargeral('.div_jesuschorou');
 }
@@ -278,7 +285,6 @@ function limpargeral(tela){
   document.querySelector('.devocional_div').style.display = 'none';
   document.querySelector('.div_curiosidades').style.display = 'none';
   document.querySelector('.div_livroantigo').style.display = 'none';
-  document.querySelector('.div_livrosnovo').style.display = 'none';
   document.querySelector('.div_jesuschorou').style.display = 'none';
   document.querySelector('.div_autores').style.display = 'none';
   document.querySelector('.div_mandamentos').style.display = 'none';

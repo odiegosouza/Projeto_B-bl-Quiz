@@ -204,11 +204,9 @@ body .content {
 
 /** div antigo e novo testamento principal */
 .div_facil {
-  width: 800px;
-  height: 560px;
-  background-image: url('https://portalwp.s3.amazonaws.com/wp-content/uploads/20200416105249/casamento-haste-horizontal-da-cruz-e1587056103615.jpg');
-  background-repeat: no-repeat;
-  background-size: cover;
+  width: 80%;
+  height: 600px;
+  background-image: url("https://wallpaperboat.com/wp-content/uploads/2020/06/04/43016/pink-cloud-08.jpg");
   border: 2px solid white;
   border-radius: 10px;
   position: fixed;
@@ -216,7 +214,7 @@ body .content {
   left: 50%;
   transform: translate(-50%, -50%);
   display: none;
-  margin-left: 100px;
+  margin-left: 120px;
 }
 
 
@@ -371,18 +369,6 @@ ul {
   justify-content: center;
 }
 
-.botaonovotestamento{
-  padding: 10px 20px;
-  margin: 10px;
-  font-size: 16px;
-  cursor: pointer;
-  background-color: #6c3c0c;
-  color: white;
-  border: 1px solid white;
-  border-radius: 4px;
-  box-shadow: 10px 5px 10px 5px rgba(0, 0, 0, 0.1);
-  margin-left: 400px;
-}
 
 .div_livroantigo .voltar {
   background-color: black;
@@ -399,49 +385,6 @@ ul {
   text-decoration: none;
 }
 
-
-/* div livros novo testamento */
-.div_livrosnovo {
-  width: 1000px;
-  height: 600px;
-  background-color: #6c3c0c;
-  border: 2px solid white;
-  border-radius: 10px;
-  position: fixed;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  display: none;
-  margin-left: 120px;
-  font-size: 20px;
-}
-
-.div_livrosnovo h3 {
-  color: white;
-  display: flex;
-  justify-content: center;
-}
-
-.div_livrosnovo h4 {
-  color: white;
-  display: flex;
-  justify-content: center;
-}
-
-.div_livrosnovo .voltar {
-  background-color: black;
-  width: 5%;
-  position: absolute;
-  bottom: 0;
-  right: 0;
-  color: #fff;
-  padding: 10px;
-  justify-content: center;
-  display: flex;
-  border-radius: 10px;
-  border: 1px solid white;
-  text-decoration: none;
-}
 
 
 /* div mandamentos*/

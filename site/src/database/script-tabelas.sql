@@ -20,38 +20,63 @@ senha varchar(45)
 );
 
 create table Quiz (
-idQuiz int primary key,
-tipo varchar(45)
+idQuiz int primary key
 );
 
-
-/* não irei usar essa tabela, farei as questoes no proprio vetor
 create table Questoes (
 idQuestoes int primary key,
 descricao varchar(100),
-opcoes varchar(1),
+opcoes varchar(100),
 fkQuizQuestoes int, constraint fkQuizQuestoes foreign key (fkQuizQuestoes) references Quiz(idQuiz)
 );
-*/
+
 
 create table Feedback (
 idFeedback int primary key auto_increment,
 comentario varchar(260),
-nota decimal(4,2)
+nota int
 );
 
 create table Tentativa (
 idTentativa int auto_increment,
-fkQuiz int,
-fkUsuario int,
-PRIMARY KEY (idTentativa, fkQuiz, fkUsuario),
+fkQuiz int, constraint fkQuiz foreign key (fkQuiz) references quiz(idquiz),
+fkUsuario int, constraint fkusuario foreign key (fkusuario) references usuario(idusuario),
 fkFeedback int, constraint fkFeedback foreign key (fkFeedback) references Feedback(idFeedback),
-qtd_acertos varchar(45)
+qtd_acertos varchar(45),
+PRIMARY KEY (idTentativa, fkQuiz, fkUsuario)
 );
 
 
+-- inserindo os dados --
+
+insert into Quiz value
+(1);
+
+insert into Usuario (nome, email, senha) values
+('Leonardo Vasconcelos', 'leonardo.paulino@sptech.school', '123456');
 
 select * from Usuario;
+
+INSERT INTO Tentativa VALUES
+(null, 1, 1, null, 7);
+
+
+select usuario.idUsuario,usuario.nome, usuario.email,tentativa.* from Tentativa
+join Usuario on Usuario.idUsuario = Tentativa.fkUsuario;
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
