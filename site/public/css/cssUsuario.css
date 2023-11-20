@@ -641,9 +641,18 @@ margin-left: 150px;
 }
 
 .question {
+  width: 46%;
   font-size: 30px;
-  margin-bottom: 10px;
+  margin-bottom: 20px;
+  display: flex;
+  position: absolute;
+  margin-top: -20px;
+  white-space: normal;
+  left: 100%; 
+  transform: translate(-60%, -30%); 
 }
+
+
 
 .answer {
   display: block;
@@ -656,7 +665,6 @@ margin-left: 150px;
   border: 1px solid #ccc;
   border-radius: 4px;
 }
-
 
 
 .correct {
@@ -672,10 +680,18 @@ margin-left: 150px;
 .final-message {
   font-size: 18px;
   margin-bottom: 20px;
+  margin-top: 80px;
+  margin-left: -500px;
 }
 
 .final-message span {
   font-weight: bold;
+  white-space: normal;
+}
+
+.div_facil .quiz-container  p{
+  margin-left: -500px;
+  text-align: left;
 }
 
 

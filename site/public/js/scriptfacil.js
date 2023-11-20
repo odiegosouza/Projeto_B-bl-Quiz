@@ -114,10 +114,7 @@ function finishGame() {
     <p class="final-message">
       Você acertou ${totalCorrect} de ${totalQuestions} questões! <br> <br>
       <span>Resultado: ${message}</span>
-    </p>
-    <button 
-      onclick="dashboard()" class="button">Dashboard</button>
-  `;
+    </p>`;
 
 
   // Exibir os resultados
