@@ -130,6 +130,7 @@ body .content {
 }
 
 
+
 .brown-div {
   width: 800px;
   height: 500px;
@@ -206,6 +207,7 @@ body .content {
 .div_facil {
   width: 80%;
   height: 600px;
+  overflow: auto;
   background-image: url("https://wallpaperboat.com/wp-content/uploads/2020/06/04/43016/pink-cloud-08.jpg");
   border: 2px solid white;
   border-radius: 10px;
@@ -228,6 +230,13 @@ body .content {
   color: black;
 }
 
+.div_facil img{
+  width: 50%;
+  height: 500px;
+  border-radius: 20px;
+  display: flex;
+  margin-left: 250px;
+}
 
 /* div devocional */
 .devocional_div {
@@ -574,7 +583,6 @@ margin-left: 150px;
 
 
   /* mycharts */
-  
 .mychartantigo{
   margin-left: 400px;
   margin-top: 90px;
@@ -648,7 +656,7 @@ margin-left: 150px;
   margin-top: -20px;
   white-space: normal;
   left: 100%; 
-  transform: translate(-60%, -30%); 
+  transform: translate(-90%, -30%); 
 }
 
 
@@ -676,11 +684,10 @@ margin-left: 150px;
   color: #fff;
 }
 
-.final-message {
-  font-size: 18px;
+.div_facil .quiz-container .questions-container .final-message{
   margin-bottom: 20px;
-  margin-top: 80px;
-  margin-left: -500px;
+  margin-top: 400px;
+
 }
 
 .final-message span {
@@ -689,7 +696,7 @@ margin-left: 150px;
 }
 
 .div_facil .quiz-container  p{
-  margin-left: -500px;
+  margin-left: -300px;
   text-align: left;
 }
 

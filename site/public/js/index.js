@@ -2,11 +2,13 @@ const slider = document.querySelectorAll('.slider');
 const btnPrev = document.getElementById('prev-button');
 const btnNext = document.getElementById('next-button');
 
-let currentSlide = 0;
-let intervalId;
+var currentSlide = 0;
+var intervalId;
 
 function hideSlider() {
-  slider.forEach(item => item.classList.remove('on'))
+  for (var i = 0; i < slider.length; i++) {
+    slider[i].classList.remove('on');
+  }
 }
 
 function showSlider() {
@@ -42,5 +44,3 @@ function stopSlider() {
 }
 
 startSlider(); // Inicia o slider automaticamente
-
-

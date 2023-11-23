@@ -52,7 +52,7 @@ else {
           // Redirecionando para "telaUsuario.html" após 5 segundos
           setTimeout(function () {
             window.location = "telaUsuario.html";
-          }, 5000);
+          }, 2000);
         });
       } else {
         // Se a resposta não foi bem-sucedida, exibindo um alerta com o texto da resposta

@@ -9,7 +9,7 @@ var $answers = document.querySelectorAll(".answer");
 // Iniciar as variáveis
 var currentQuestionIndex = 0;
 var totalCorrect = 0;
-var results = [];  // Vetor para armazenar os resultados
+var results = []; // Vetor para armazenar os resultados
 
 // Adiciona ouvintes de eventos aos botões
 $startGameButton.addEventListener("click", startGame);
@@ -108,7 +108,6 @@ function finishGame() {
     message = "Parabéns, você acertou tudo!";
   }
 
-
   // Atualizar o conteúdo do contêiner de perguntas com a mensagem final e o botão para refazer o teste
   $questionsContainer.innerHTML = `
     <p class="final-message">
@@ -116,21 +115,18 @@ function finishGame() {
       <span>Resultado: ${message}</span>
     </p>`;
 
-
   // Exibir os resultados
   results.forEach((result, index) => {
     var resultText = result.correct ? "Acertou" : "Errou";
     var color = result.correct ? "darkgreen" : "red";
     $questionsContainer.innerHTML += `
-      <p style="color: ${color};">Pergunta ${index + 1}: ${result.question} - ${resultText}</p>
+      <p style="color: ${color};">Pergunta ${index + 1}: ${
+      result.question
+    } - ${resultText}</p>
     `;
   });
   dashboard();
 }
-
-
-
-
 
 // Array de perguntas e respostas
 
@@ -225,69 +221,152 @@ var questions = [
       { text: "Nenhuma das alternativas", correct: false },
     ],
   },
+  {
+    question: "Quem foi o discípulo que traiu Jesus?",
+    answers: [
+      { text: "Pedro", correct: false },
+      { text: "João", correct: false },
+      { text: "Judas", correct: true },
+      { text: "Tiago", correct: false },
+    ]
+  },
+  {
+    question: "Quem construiu a arca?",
+    answers: [
+      { text: "Moisés", correct: false },
+      { text: "Noé", correct: true },
+      { text: "Abraão", correct: false },
+      { text: "Josué", correct: false },
+    ]
+  },
+  {
+    question: "Quem foi o pai de Jesus na terra?",
+    answers: [
+      { text: "José", correct: true },
+      { text: "João", correct: false },
+      { text: "Pedro", correct: false },
+      { text: "Paulo", correct: false },
+    ]
+  },
+  {
+    question: "Quem foi o rei mais sábio de Israel?",
+    answers: [
+      { text: "Saul", correct: false },
+      { text: "Davi", correct: false },
+      { text: "Salomão", correct: true },
+      { text: "Roboão", correct: false },
+    ]
+  },
+  {
+    question: "Quem foi o profeta que Deus usou para libertar os israelitas do Egito?",
+    answers: [
+      { text: "Moisés", correct: true },
+      { text: "Josué", correct: false },
+      { text: "Samuel", correct: false },
+      { text: "Elias", correct: false },
+    ]
+  },
+  {
+    question: "Quem foi o primeiro homem criado por Deus?",
+    answers: [
+      { text: "Caim", correct: false },
+      { text: "Abel", correct: false },
+      { text: "Adão", correct: true },
+      { text: "Noé", correct: false },
+    ]
+  },
+  {
+    question: "Quem foi a primeira mulher criada por Deus?",
+    answers: [
+      { text: "Maria", correct: false },
+      { text: "Eva", correct: true },
+      { text: "Sara", correct: false },
+      { text: "Rute", correct: false },
+    ]
+  },
+  {
+    question: "Quem foi o rei que derrotou Golias?",
+    answers: [
+      { text: "Saul", correct: false },
+      { text: "Davi", correct: true },
+      { text: "Salomão", correct: false },
+      { text: "Josué", correct: false },
+    ]
+  },
+  {
+    question: "Quem foi o profeta que foi levado ao céu em um carro de fogo?",
+    answers: [
+      { text: "Elias", correct: true },
+      { text: "Eliseu", correct: false },
+      { text: "Isaías", correct: false },
+      { text: "Jeremias", correct: false },
+    ]
+  },
+  {
+    question: "Quem foi o profeta que interpretou o sonho do rei Nabucodonosor?",
+    answers: [
+      { text: "Daniel", correct: true },
+      { text: "Ezequiel", correct: false },
+      { text: "Oséias", correct: false },
+      { text: "Joel", correct: false },
+    ]
+  }  
 ];
 
-
-
-
 function comecar() {
- limpargeral('.brown-div');
+  limpargeral(".brown-div");
 }
 
 function facil() {
-  limpargeral('.div_facil');
+  limpargeral(".div_facil");
 }
 
 function devocional() {
-  limpargeral('.devocional_div');
+  limpargeral(".devocional_div");
 }
 
 function curiosidades() {
-  limpargeral('.div_curiosidades');
+  limpargeral(".div_curiosidades");
 }
 
-function avancar() {
-  limpargeral('.div_avancar'); 
+function vercuriosidadelivros() {
+  limpargeral(".div_livroantigo");
 }
 
 function verjesuschorou() {
-  limpargeral('.div_jesuschorou');
+  limpargeral(".div_jesuschorou");
 }
 
 function verautores() {
-  limpargeral('.div_autores');
+  limpargeral(".div_autores");
 }
 
 function vermandamentos() {
-  limpargeral('.div_mandamentos');
+  limpargeral(".div_mandamentos");
 }
 
 function dashboard() {
-  document.querySelector('.div_dashboard').style.display = 'block';
+  document.querySelector(".div_dashboard").style.display = "block";
   myChart.data.datasets[0].data[0] = totalCorrect;
   myChart.data.datasets[0].data[1] = questions.length - totalCorrect;
   myChart.update();
 }
 
-
-
-function limpargeral(tela){
-  document.querySelector('.brown-div').style.display = 'none';
-  document.querySelector('.div_facil').style.display = 'none';
-  document.querySelector('.devocional_div').style.display = 'none';
-  document.querySelector('.div_curiosidades').style.display = 'none';
-  document.querySelector('.div_livroantigo').style.display = 'none';
-  document.querySelector('.div_jesuschorou').style.display = 'none';
-  document.querySelector('.div_autores').style.display = 'none';
-  document.querySelector('.div_mandamentos').style.display = 'none';
-  document.querySelector(tela).style.display = 'block';
+function limpargeral(tela) {
+  document.querySelector(".brown-div").style.display = "none";
+  document.querySelector(".div_facil").style.display = "none";
+  document.querySelector(".devocional_div").style.display = "none";
+  document.querySelector(".div_curiosidades").style.display = "none";
+  document.querySelector(".div_livroantigo").style.display = "none";
+  document.querySelector(".div_jesuschorou").style.display = "none";
+  document.querySelector(".div_autores").style.display = "none";
+  document.querySelector(".div_mandamentos").style.display = "none";
+  document.querySelector(tela).style.display = "block";
 }
 
-
-
-
 // Declarando o vetor e a função fora da função devocional
-const meuVetor = ["Porque eu bem sei os pensamentos que tenho a vosso respeito, diz o SENHOR; pensamentos de paz, e não de mal, para vos dar o fim que esperais. - Jeremias 29:11",
+const meuVetor = [
+  "Porque eu bem sei os pensamentos que tenho a vosso respeito, diz o SENHOR; pensamentos de paz, e não de mal, para vos dar o fim que esperais. - Jeremias 29:11",
   "Tudo posso naquele que me fortalece. - Filipenses 4:13",
   "O SENHOR é o meu pastor; nada me faltará. - Salmo 23:1",
   "O amor é paciente, é benigno; o amor não arde em ciúmes, não se ufana, não se ensoberbece. - 1 Coríntios 13:4",
@@ -326,7 +405,8 @@ const meuVetor = ["Porque eu bem sei os pensamentos que tenho a vosso respeito, 
   "O SENHOR é misericordioso e compassivo, longânimo e assaz benigno. - Salmo 103:8",
   "Os que confiam no SENHOR são como o monte Sião, que não se abala, mas permanece para sempre. - Salmo 125:1",
   "Porque eu sei que o meu Redentor vive e por fim se levantará sobre a terra. - Jó 19:25",
-  "O SENHOR é a minha luz e a minha salvação; a quem temerei? O SENHOR é a força da minha vida; de quem me recearei? - Salmo 27:1",];
+  "O SENHOR é a minha luz e a minha salvação; a quem temerei? O SENHOR é a força da minha vida; de quem me recearei? - Salmo 27:1",
+];
 
 function obterValorAleatorio(vetor) {
   var indiceAleatorio = Math.floor(Math.random() * vetor.length);
@@ -337,37 +417,28 @@ function exibirDevocional() {
   // Obtive o valor aleatório
   var valorAleatorio = obterValorAleatorio(meuVetor);
 
-  // Exibi dentro da div 
-  document.getElementById('exibir').innerHTML = `<span style="color: white">${valorAleatorio}</span>`;
+  // Exibi dentro da div
+  document.getElementById(
+    "exibir"
+  ).innerHTML = `<span style="color: white">${valorAleatorio}</span>`;
 }
 
 /* mychart velho testamento */
 const data = {
-  labels: [
-      'Acertos',
-      'Erros',
-
+  labels: ["Acertos", "Erros"],
+  datasets: [
+    {
+      label: "",
+      data: [,],
+      backgroundColor: ["rgb(0,255,0)", "rgb(255,0,0)"],
+      hoverOffset: 4,
+    },
   ],
-  datasets: [{
-      label: '',
-      data: [ , ],
-      backgroundColor: [
-          'rgb(0,255,0)',
-          'rgb(255,0,0)',
-
-      ],
-      hoverOffset: 4
-  }]
 };
 
 const config = {
-  type: 'doughnut',
+  type: "doughnut",
   data: data,
 };
 
-const myChart = new Chart(
-  document.getElementById('myChart'),
-  config
-);
-
-
+const myChart = new Chart(document.getElementById("myChart"), config);
