@@ -63,26 +63,20 @@ function selectAnswer(event) {
   var result = {};
 
   if (answerClicked.dataset.correct) {
-    document.body.classList.add("correct");
     totalCorrect++;
     result.correct = true;
+    answerClicked.classList.add("correct");
   } else {
-    document.body.classList.add("incorrect");
     result.correct = false;
+    answerClicked.classList.add("incorrect");
   }
 
   result.question = questions[currentQuestionIndex].question;
   results.push(result);
 
-  // Desabilita todas as respostas e destaca a resposta correta/incorreta
+  // Desabilita todas as respostas
   document.querySelectorAll(".answer").forEach((button) => {
     button.disabled = true;
-
-    if (button.dataset.correct) {
-      button.classList.add("correct");
-    } else {
-      button.classList.add("incorrect");
-    }
   });
 
   // Exibir o botão de próxima pergunta
@@ -93,29 +87,30 @@ function selectAnswer(event) {
 // Função para finalizar o jogo e exibir a pontuação
 function finishGame() {
   var totalQuestions = questions.length;
-  var performance = Math.floor((totalCorrect * 10) / totalQuestions);
 
   var message = "";
 
-  // Determinar a mensagem com base no desempenho do jogador
-  if (performance <= 5) {
+  // Determina a mensagem com base no desempenho do jogador
+  if (totalCorrect <= 13) {
     message = "Pode melhorar :(";
-  } else if (performance <= 7) {
+  } else if (totalCorrect <= 17) {
     message = "Bom :)";
-  } else if (performance <= 9) {
+  } else if (totalCorrect <= 19) {
     message = "Maravilha, acertou quase todas!";
   } else {
     message = "Parabéns, você acertou tudo!";
   }
 
-  // Atualizar o conteúdo do contêiner de perguntas com a mensagem final e o botão para refazer o teste
+  // Atualiza o conteúdo do contêiner de perguntas com a mensagem final e o botão para refazer o teste
   $questionsContainer.innerHTML = `
     <p class="final-message">
       Você acertou ${totalCorrect} de ${totalQuestions} questões! <br> <br>
       <span>Resultado: ${message}</span>
     </p>`;
 
-  // Exibir os resultados
+
+
+  // Exibe os resultados
   results.forEach((result, index) => {
     var resultText = result.correct ? "Acertou" : "Errou";
     var color = result.correct ? "darkgreen" : "red";
