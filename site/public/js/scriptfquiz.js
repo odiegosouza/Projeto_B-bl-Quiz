@@ -1,78 +1,78 @@
 // Seleção de elementos HTML usando classes
-var $startGameButton = document.querySelector(".start-quiz");
-var $nextQuestionButton = document.querySelector(".next-question");
-var $questionsContainer = document.querySelector(".questions-container");
-var $questionText = document.querySelector(".question");
-var $answersContainer = document.querySelector(".answers-container");
-var $answers = document.querySelectorAll(".answer");
+var botaoIniciarJogo = document.querySelector(".start-quiz");
+var botaoProximaQuestao = document.querySelector(".next-question");
+var containerPerguntas = document.querySelector(".questions-container");
+var textoPergunta = document.querySelector(".question");
+var containerRespostas = document.querySelector(".answers-container");
+var respostas = document.querySelectorAll(".answer");
 
 // Iniciar as variáveis
-var currentQuestionIndex = 0;
-var totalCorrect = 0;
-var results = []; // Vetor para armazenar os resultados
+var indiceQuestaoAtual = 0;
+var totalCorreto = 0;
+var resultados = []; // Vetor para armazenar os resultados
 
 // Adiciona ouvintes de eventos aos botões
-$startGameButton.addEventListener("click", startGame);
-$nextQuestionButton.addEventListener("click", displayNextQuestion);
+botaoIniciarJogo.addEventListener("click", iniciarJogo);
+botaoProximaQuestao.addEventListener("click", exibirProximaQuestao);
 
 // Função para iniciar o quiz
-function startGame() {
-  $startGameButton.classList.add("hide");
-  $questionsContainer.classList.remove("hide");
-  displayNextQuestion();
+function iniciarJogo() {
+  botaoIniciarJogo.classList.add("hide");
+  containerPerguntas.classList.remove("hide");
+  exibirProximaQuestao();
 }
 
 // Função para exibir a próxima pergunta
-function displayNextQuestion() {
+function exibirProximaQuestao() {
   // Reseta o estado antes de exibir a próxima pergunta
-  resetState();
+  resetarEstado();
 
   // Verifica se todas as perguntas foram respondidas
-  if (questions.length === currentQuestionIndex) {
-    return finishGame();
+  if (questions.length === indiceQuestaoAtual) {
+    return finalizarJogo();
   }
 
   // Exibe a pergunta atual e suas opções de resposta
-  $questionText.textContent = questions[currentQuestionIndex].question;
-  questions[currentQuestionIndex].answers.forEach((answer) => {
-    var newAnswer = document.createElement("button");
-    newAnswer.classList.add("button", "answer");
-    newAnswer.textContent = answer.text;
+  textoPergunta.textContent = questions[indiceQuestaoAtual].question;
+  questions[indiceQuestaoAtual].answers.forEach((answer) => {
+    var novaResposta = document.createElement("button");
+    novaResposta.classList.add("button", "answer");
+    novaResposta.textContent = answer.text;
     if (answer.correct) {
-      newAnswer.dataset.correct = answer.correct;
+      novaResposta.dataset.correct = answer.correct;
     }
-    $answersContainer.appendChild(newAnswer);
+    containerRespostas.appendChild(novaResposta);
 
-    newAnswer.addEventListener("click", selectAnswer);
+    novaResposta.addEventListener("click", selecionarResposta);
   });
 }
 
 // Reseta o estado para a próxima pergunta
-function resetState() {
-  while ($answersContainer.firstChild) {
-    $answersContainer.removeChild($answersContainer.firstChild);
+function resetarEstado() {
+  while (containerRespostas.firstChild) {
+    containerRespostas.removeChild(containerRespostas.firstChild);
   }
 
   document.body.removeAttribute("class");
-  $nextQuestionButton.classList.add("hide");
+  botaoProximaQuestao.classList.add("hide");
 }
 
 // Função para processar a seleção de uma resposta
-function selectAnswer(event) {
-  var answerClicked = event.target;
-  var result = {};
+function selecionarResposta(event) {
+  var respostaClicada = event.target;
+  var resultado = {};
 
-  if (answerClicked.dataset.correct) {
-    totalCorrect++;
-    result.correct = true;
-    answerClicked.classList.add("correct");
+  if (respostaClicada.dataset.correct) {
+    totalCorreto++;
+    resultado.correct = true;
+    respostaClicada.classList.add("correct");
   } else {
-    result.correct = false;
-    answerClicked.classList.add("incorrect");
+    resultado.correct = false;
+    respostaClicada.classList.add("incorrect");
   }
 
-  result.question = questions[currentQuestionIndex].question;
-  results.push(result);
+  resultado.question = questions[indiceQuestaoAtual].question;
+  resultados.push(resultado);
 
   // Desabilita todas as respostas
   document.querySelectorAll(".answer").forEach((button) => {
@@ -80,48 +80,48 @@ function selectAnswer(event) {
   });
 
   // Exibir o botão de próxima pergunta
-  $nextQuestionButton.classList.remove("hide");
-  currentQuestionIndex++;
+  botaoProximaQuestao.classList.remove("hide");
+  indiceQuestaoAtual++;
 }
 
 // Função para finalizar o jogo e exibir a pontuação
-function finishGame() {
-  var totalQuestions = questions.length;
+function finalizarJogo() {
+  var totalPerguntas = questions.length;
 
-  var message = "";
+  var mensagem = "";
 
   // Determina a mensagem com base no desempenho do jogador
-  if (totalCorrect <= 13) {
-    message = "Pode melhorar :(";
-  } else if (totalCorrect <= 17) {
-    message = "Bom :)";
-  } else if (totalCorrect <= 19) {
-    message = "Maravilha, acertou quase todas!";
+  if (totalCorreto <= 13) {
+    mensagem = "Pode melhorar :(";
+  } else if (totalCorreto <= 17) {
+    mensagem = "Bom :)";
+  } else if (totalCorreto <= 19) {
+    mensagem = "Maravilha, acertou quase todas!";
   } else {
-    message = "Parabéns, você acertou tudo!";
+    mensagem = "Parabéns, você acertou tudo!";
   }
 
   // Atualiza o conteúdo do contêiner de perguntas com a mensagem final e o botão para refazer o teste
-  $questionsContainer.innerHTML = `
+  containerPerguntas.innerHTML = `
     <p class="final-message">
-      Você acertou ${totalCorrect} de ${totalQuestions} questões! <br> <br>
-      <span>Resultado: ${message}</span>
+      Você acertou ${totalCorreto} de ${totalPerguntas} questões! <br> <br>
+      <span>Resultado: ${mensagem}</span>
     </p>`;
 
-
-
   // Exibe os resultados
-  results.forEach((result, index) => {
-    var resultText = result.correct ? "Acertou" : "Errou";
-    var color = result.correct ? "darkgreen" : "red";
-    $questionsContainer.innerHTML += `
-      <p style="color: ${color};">Pergunta ${index + 1}: ${
-      result.question
-    } - ${resultText}</p>
+  resultados.forEach((resultado, index) => {
+    var textoResultado = resultado.correct ? "Acertou" : "Errou";
+    var cor = resultado.correct ? "darkgreen" : "red";
+    containerPerguntas.innerHTML += `
+      <p style="color: ${cor};">Pergunta ${index + 1}: ${
+      resultado.question
+    } - ${textoResultado}</p>
     `;
   });
   dashboard();
 }
+
+
 
 // Array de perguntas e respostas
 
@@ -342,8 +342,8 @@ function vermandamentos() {
 
 function dashboard() {
   document.querySelector(".div_dashboard").style.display = "block";
-  myChart.data.datasets[0].data[0] = totalCorrect;
-  myChart.data.datasets[0].data[1] = questions.length - totalCorrect;
+  myChart.data.datasets[0].data[0] = totalCorreto;
+  myChart.data.datasets[0].data[1] = questions.length - totalCorreto;
   myChart.update();
 }
 
