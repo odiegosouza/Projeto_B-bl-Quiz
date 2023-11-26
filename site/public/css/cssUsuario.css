@@ -55,7 +55,7 @@ h1 {
   text-decoration: none;
   padding: 10px;
   transition: background-color 0.3s;
-  margin-top: 160px;
+  margin-top: 100%;
 }
 
 .navbar a {
@@ -97,12 +97,47 @@ body .content {
   flex-direction: column;
 }
 
+.tituloranking{
+margin-left: 1000px;
+margin-top: 50px;
+color: white;
+z-index: 9999;
+}
+
+.ranking{
+  background-color: #6c3c0c;
+  width: 20%;
+  height: 70%;
+  margin-left: 75%;
+  margin-top: -70px;
+  box-shadow: 20px 5px 10px 5px rgba(0, 0, 0, 0.1);
+  border-radius: 10px;
+  border: 1px solid white;
+  display: flex;
+  justify-content: center;
+}
+
+
+#mostrar{
+  margin-top: 50px;
+  margin-right: 200px;
+  color: white;
+  white-space: nowrap;
+}
+.div-com-linha {
+  border-bottom: 1px solid #ccc; 
+  width: 365%;
+}
 .header {
   color: white;
   padding: 10px;
   text-align: center;
   margin-top: -800px;
   margin-left: 300px;
+}
+
+.header h1{
+  margin-top: 1100px;
 }
 
 .start-button {
@@ -113,7 +148,7 @@ body .content {
   padding: 15px 30px;
   font-size: 16px;
   cursor: pointer;
-  margin-top: 10px;
+  margin-top: -250px;
   margin-left: 200px;
   box-shadow: 10px 5px 10px 5px rgba(0, 0, 0, 0.1);
 }
@@ -203,7 +238,7 @@ body .content {
   font-size: 15px;
 }
 
-/** div antigo e novo testamento principal */
+/** div quiz */
 .div_facil {
   width: 80%;
   height: 600px;
@@ -218,6 +253,7 @@ body .content {
   display: none;
   margin-left: 120px;
 }
+
 
 .div_facil::-webkit-scrollbar {
   width: 12px;
@@ -254,13 +290,6 @@ body .content {
   color: black;
 }
 
-.div_facil img{
-  width: 50%;
-  height: 500px;
-  border-radius: 20px;
-  display: flex;
-  margin-left: 250px;
-}
 
 /* div devocional */
 .devocional_div {

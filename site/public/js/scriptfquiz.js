@@ -119,9 +119,38 @@ function finalizarJogo() {
     `;
   });
   dashboard();
+
+  var ID_USUARIO = sessionStorage.getItem("ID_USUARIO");
+
+  fetch("/tentativa", {
+    method: "POST",
+    headers: {
+      "Content-Type": "application/json",
+    },
+
+    body: JSON.stringify({
+      fkQuiz: 1,
+      fkUsuario: ID_USUARIO,
+      qtd_acertos: totalCorreto,
+    }),
+  });
 }
 
+fetch("/tentativa", {
+  method: "GET",
+  headers: {
+    "Content-Type": "application/json",
+  }
+}).then(function (resposta) {
+  resposta.json().then(function (json) {
+    console.log(json.length);
 
+    for (var contador = 0; contador < json.length; contador++) {
+      mostrar.innerHTML += `<Br>  ${contador + 1} ${json[contador].nome}  ${json[contador].maximo} <div class="div-com-linha"> <Br>
+`;
+    }
+  });
+});
 
 // Array de perguntas e respostas
 
@@ -223,7 +252,7 @@ var questions = [
       { text: "João", correct: false },
       { text: "Judas", correct: true },
       { text: "Tiago", correct: false },
-    ]
+    ],
   },
   {
     question: "Quem construiu a arca?",
@@ -232,7 +261,7 @@ var questions = [
       { text: "Noé", correct: true },
       { text: "Abraão", correct: false },
       { text: "Josué", correct: false },
-    ]
+    ],
   },
   {
     question: "Quem foi o pai de Jesus na terra?",
@@ -241,7 +270,7 @@ var questions = [
       { text: "João", correct: false },
       { text: "Pedro", correct: false },
       { text: "Paulo", correct: false },
-    ]
+    ],
   },
   {
     question: "Quem foi o rei mais sábio de Israel?",
@@ -250,16 +279,17 @@ var questions = [
       { text: "Davi", correct: false },
       { text: "Salomão", correct: true },
       { text: "Roboão", correct: false },
-    ]
+    ],
   },
   {
-    question: "Quem foi o profeta que Deus usou para libertar os israelitas do Egito?",
+    question:
+      "Quem foi o profeta que Deus usou para libertar os israelitas do Egito?",
     answers: [
       { text: "Moisés", correct: true },
       { text: "Josué", correct: false },
       { text: "Samuel", correct: false },
       { text: "Elias", correct: false },
-    ]
+    ],
   },
   {
     question: "Quem foi o primeiro homem criado por Deus?",
@@ -268,7 +298,7 @@ var questions = [
       { text: "Abel", correct: false },
       { text: "Adão", correct: true },
       { text: "Noé", correct: false },
-    ]
+    ],
   },
   {
     question: "Quem foi a primeira mulher criada por Deus?",
@@ -277,7 +307,7 @@ var questions = [
       { text: "Eva", correct: true },
       { text: "Sara", correct: false },
       { text: "Rute", correct: false },
-    ]
+    ],
   },
   {
     question: "Quem foi o rei que derrotou Golias?",
@@ -286,7 +316,7 @@ var questions = [
       { text: "Davi", correct: true },
       { text: "Salomão", correct: false },
       { text: "Josué", correct: false },
-    ]
+    ],
   },
   {
     question: "Quem foi o profeta que foi levado ao céu em um carro de fogo?",
@@ -295,17 +325,18 @@ var questions = [
       { text: "Eliseu", correct: false },
       { text: "Isaías", correct: false },
       { text: "Jeremias", correct: false },
-    ]
+    ],
   },
   {
-    question: "Quem foi o profeta que interpretou o sonho do rei Nabucodonosor?",
+    question:
+      "Quem foi o profeta que interpretou o sonho do rei Nabucodonosor?",
     answers: [
       { text: "Daniel", correct: true },
       { text: "Ezequiel", correct: false },
       { text: "Oséias", correct: false },
       { text: "Joel", correct: false },
-    ]
-  }  
+    ],
+  },
 ];
 
 function comecar() {
