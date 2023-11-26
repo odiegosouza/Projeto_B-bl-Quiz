@@ -121,6 +121,7 @@
         var emailVar = in_email.value;
         var senhaVar = in_senha.value;
 
+
         if (emailVar == "" || senhaVar == "") {
             cardErro.style.display = "block"
             mensagem_erro.innerHTML = "Campo Email e Senha vazios!";
@@ -154,6 +155,7 @@
                     console.log(JSON.stringify(json));
                     sessionStorage.EMAIL_USUARIO = json.email;
                     sessionStorage.ID_USUARIO = json.idUsuario;
+                    sessionStorage.NOME_USUARIO = json.nome;
 
                     setTimeout(function () {
                         window.location = "telaUsuario.html";

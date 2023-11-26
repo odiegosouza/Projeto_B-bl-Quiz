@@ -8,7 +8,6 @@
     <link href="CSS/cssUsuario.css" rel="stylesheet">
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
     <link rel="shortcut icon" href="assets/imgs/logobiblia.png" type="image/x-icon">
-
 </head>
 
 <body style="display: flex;">
@@ -23,24 +22,20 @@
             <li><a href="#" onclick="comecar()">Quiz</a></li>
             <li><a href="#" onclick="devocional()">Devocional</a></li>
             <li><a href="#" onclick="curiosidades()">Curiosidades</a></li>
+            <li><a href="#" onclick="ranking()">Ranking</a></li>
             <li class="logoff"><a href="login.html">Logoff</a></li>
         </ul>
     </div>
+
     <div class="content">
-        
-        <div class="perfil"></div>
-
-        <h2 class="tituloranking">Ranking</h2>
-        
-        <div class="ranking">
-
-          <div id="mostrar"></div>
+    
+        <div class="header">
+            <h1 id="nomeTitulo"></h1>
         </div>
 
-
-
-        <div class="header">
-            <h1>Bem-vindo ao BíbliQuiz</h1> 
+        <div class="div_ranking" style="display: none;">
+            <h2 style="display: flex; justify-content: center; color: white;">Ranking</h2>
+            <div id="mostrar"></div>
         </div>
         <button class="start-button" onclick="comecar()">Começar Quiz</button>
     </div>
@@ -88,7 +83,7 @@
             <li>A Bíblia foi escrita por mais de 40 autores ao longo de cerca de 1.500 anos.</li>
             <button onclick="verautores()">Ver curiosidade</button>
             <hr>
-            
+
             <li>O menor versículo da Bíblia é João 11:35 - "Jesus chorou".</li>
             <button onclick="verjesuschorou()">Ver curiosidade</button>
             <a href="#" class="voltar" id="botaoVoltar">Voltar</a>

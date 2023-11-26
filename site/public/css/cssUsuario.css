@@ -55,7 +55,7 @@ h1 {
   text-decoration: none;
   padding: 10px;
   transition: background-color 0.3s;
-  margin-top: 100%;
+  margin-top: 75%;
 }
 
 .navbar a {
@@ -97,36 +97,39 @@ body .content {
   flex-direction: column;
 }
 
-.tituloranking{
-margin-left: 1000px;
-margin-top: 50px;
-color: white;
-z-index: 9999;
+
+#nometitulo {
+  position: absolute;
+  margin-left: 1000px;
+  margin-top: 10%; /* Ajuste este valor conforme necessário */
+  z-index: 9999; /* Valor alto para garantir sobreposição */
 }
 
-.ranking{
+
+.div_ranking{
   background-color: #6c3c0c;
   width: 20%;
   height: 70%;
-  margin-left: 75%;
-  margin-top: -70px;
+  margin-left: 74%;
+  margin-top: -100px;
   box-shadow: 20px 5px 10px 5px rgba(0, 0, 0, 0.1);
   border-radius: 10px;
   border: 1px solid white;
   display: flex;
   justify-content: center;
+  position: fixed;
 }
 
 
 #mostrar{
   margin-top: 50px;
-  margin-right: 200px;
+  margin-right: 10px;
   color: white;
   white-space: nowrap;
 }
 .div-com-linha {
   border-bottom: 1px solid #ccc; 
-  width: 365%;
+  width: 270px;
 }
 .header {
   color: white;
@@ -134,10 +137,6 @@ z-index: 9999;
   text-align: center;
   margin-top: -800px;
   margin-left: 300px;
-}
-
-.header h1{
-  margin-top: 1100px;
 }
 
 .start-button {
@@ -148,7 +147,7 @@ z-index: 9999;
   padding: 15px 30px;
   font-size: 16px;
   cursor: pointer;
-  margin-top: -250px;
+  margin-top: 10px;
   margin-left: 200px;
   box-shadow: 10px 5px 10px 5px rgba(0, 0, 0, 0.1);
 }

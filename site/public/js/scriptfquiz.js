@@ -122,6 +122,7 @@ function finalizarJogo() {
 
   var ID_USUARIO = sessionStorage.getItem("ID_USUARIO");
 
+
   fetch("/tentativa", {
     method: "POST",
     headers: {
@@ -136,6 +137,7 @@ function finalizarJogo() {
   });
 }
 
+
 fetch("/tentativa", {
   method: "GET",
   headers: {
@@ -143,14 +145,17 @@ fetch("/tentativa", {
   }
 }).then(function (resposta) {
   resposta.json().then(function (json) {
-    console.log(json.length);
+
 
     for (var contador = 0; contador < json.length; contador++) {
-      mostrar.innerHTML += `<Br>  ${contador + 1} ${json[contador].nome}  ${json[contador].maximo} <div class="div-com-linha"> <Br>
+      mostrar.innerHTML += `<Br> ⠀ ${contador + 1}º ${json[contador].nome} ⠀⠀⠀⠀⠀⠀⠀⠀⠀ ${json[contador].maximo} pontos <div class="div-com-linha"> <Br>
 `;
     }
   });
 });
+
+// Mostrar o nome o Usuário no começo 
+      nomeTitulo.innerHTML = `Bem vindo(a) ao BíBliQuiz, ${sessionStorage.NOME_USUARIO}!<Br>`;
 
 // Array de perguntas e respostas
 
@@ -371,6 +376,16 @@ function vermandamentos() {
   limpargeral(".div_mandamentos");
 }
 
+function ranking() {
+  var divRanking = document.querySelector(".div_ranking");
+  if (divRanking.style.display === "none" || divRanking.style.display === "") {
+    limpargeral(".div_ranking");  // Hide other divs before showing the ranking div
+    divRanking.style.display = "block";
+  } else {
+    divRanking.style.display = "none";
+  }
+}
+
 function dashboard() {
   document.querySelector(".div_dashboard").style.display = "block";
   myChart.data.datasets[0].data[0] = totalCorreto;
@@ -383,12 +398,14 @@ function limpargeral(tela) {
   document.querySelector(".div_facil").style.display = "none";
   document.querySelector(".devocional_div").style.display = "none";
   document.querySelector(".div_curiosidades").style.display = "none";
+  document.querySelector(".div_ranking").style.display = "none";
   document.querySelector(".div_livroantigo").style.display = "none";
   document.querySelector(".div_jesuschorou").style.display = "none";
   document.querySelector(".div_autores").style.display = "none";
   document.querySelector(".div_mandamentos").style.display = "none";
   document.querySelector(tela).style.display = "block";
 }
+
 
 // Declarando o vetor e a função fora da função devocional
 const meuVetor = [
