@@ -118,6 +118,26 @@ body .content {
   display: flex;
   justify-content: center;
   position: fixed;
+  overflow: auto;
+}
+
+.div_ranking::-webkit-scrollbar {
+  width: 12px;
+  border-radius: 5px;
+}
+
+.div_ranking::-webkit-scrollbar-track {
+  background: #f1f1f1;
+  border-radius: 5px;
+}
+
+.div_ranking::-webkit-scrollbar-thumb {
+  background: brown;
+    border-radius: 5px;
+}
+
+.div_ranking::-webkit-scrollbar-thumb:hover {
+  background: #6c3c0c;
 }
 
 
