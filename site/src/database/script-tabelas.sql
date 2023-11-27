@@ -23,14 +23,6 @@ create table Quiz (
 idQuiz int primary key
 );
 
-create table Questoes (
-idQuestoes int primary key,
-descricao varchar(100),
-opcoes varchar(100),
-fkQuizQuestoes int, constraint fkQuizQuestoes foreign key (fkQuizQuestoes) references Quiz(idQuiz)
-);
-
-
 create table Feedback (
 idFeedback int primary key auto_increment,
 comentario varchar(260),
@@ -42,10 +34,9 @@ idTentativa int auto_increment,
 fkQuiz int, constraint fkQuiz foreign key (fkQuiz) references quiz(idquiz),
 fkUsuario int, constraint fkusuario foreign key (fkusuario) references usuario(idusuario),
 fkFeedback int, constraint fkFeedback foreign key (fkFeedback) references Feedback(idFeedback),
-qtd_acertos varchar(45),
+qtd_acertos int,
 PRIMARY KEY (idTentativa, fkQuiz, fkUsuario)
 );
-
 
 -- inserindo os dados --
 
@@ -53,19 +44,31 @@ insert into Quiz value
 (1);
 
 insert into Usuario (nome, email, senha) values
-('Leonardo Vasconcelos', 'leonardo.paulino@sptech.school', '123456');
+('Rayssa', 'rayssa@sptech.school', 'Rayssa7173@');
 
-select * from Usuario;
+insert into tentativa (fkQuiz, fkUsuario, qtd_acertos) values
+(1,2,19);
 
-INSERT INTO Tentativa VALUES
-(null, 1, 1, null, 7);
-
-
-select usuario.idUsuario,usuario.nome, usuario.email,tentativa.* from Tentativa
-join Usuario on Usuario.idUsuario = Tentativa.fkUsuario;
+insert into feedback (idFeedback, comentario, nota) values
+(null, "Maravilha, acertou quase todas!", 19);
 
 
+select * from usuario;
+select * from tentativa ;
 
+select * from tentativa; select distinct tentativa.fkUsuario,max(qtd_acertos) maximo, usuario.nome 
+from Tentativa join Usuario on Usuario.idUsuario = Tentativa.fkUsuario
+group by tentativa.fkUsuario order by maximo desc;
+
+
+select usuario.idUsuario, usuario.nome, usuario.email, tentativa.* from tentativa
+join usuario on tentativa.fkUsuario = usuario.idUsuario where tentativa.qtd_acertos = (select max(qtd_acertos) from tentativa);
+
+select usuario.idUsuario, usuario.nome, usuario.email, tentativa.* from tentativa
+join usuario on tentativa.fkUsuario = usuario.idUsuario where tentativa.qtd_acertos = (select min(qtd_acertos)from tentativa);
+
+
+drop database bibliquiz;
 
 
 
