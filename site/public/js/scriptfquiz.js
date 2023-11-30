@@ -1,4 +1,3 @@
-// Seleção de elementos HTML usando classes
 var botaoIniciarJogo = document.querySelector(".start-quiz");
 var botaoProximaQuestao = document.querySelector(".next-question");
 var containerPerguntas = document.querySelector(".questions-container");
@@ -6,33 +5,26 @@ var textoPergunta = document.querySelector(".question");
 var containerRespostas = document.querySelector(".answers-container");
 var respostas = document.querySelectorAll(".answer");
 
-// Iniciar as variáveis
 var indiceQuestaoAtual = 0;
 var totalCorreto = 0;
-var resultados = []; // Vetor para armazenar os resultados
+var resultados = []; 
 
-// Adiciona ouvintes de eventos aos botões
 botaoIniciarJogo.addEventListener("click", iniciarJogo);
 botaoProximaQuestao.addEventListener("click", exibirProximaQuestao);
 
-// Função para iniciar o quiz
 function iniciarJogo() {
   botaoIniciarJogo.classList.add("hide");
   containerPerguntas.classList.remove("hide");
   exibirProximaQuestao();
 }
 
-// Função para exibir a próxima pergunta
 function exibirProximaQuestao() {
-  // Reseta o estado antes de exibir a próxima pergunta
   resetarEstado();
 
-  // Verifica se todas as perguntas foram respondidas
   if (questions.length === indiceQuestaoAtual) {
     return finalizarJogo();
   }
 
-  // Exibe a pergunta atual e suas opções de resposta
   textoPergunta.textContent = questions[indiceQuestaoAtual].question;
   questions[indiceQuestaoAtual].answers.forEach((answer) => {
     var novaResposta = document.createElement("button");
@@ -47,7 +39,6 @@ function exibirProximaQuestao() {
   });
 }
 
-// Reseta o estado para a próxima pergunta
 function resetarEstado() {
   while (containerRespostas.firstChild) {
     containerRespostas.removeChild(containerRespostas.firstChild);
@@ -57,7 +48,6 @@ function resetarEstado() {
   botaoProximaQuestao.classList.add("hide");
 }
 
-// Função para processar a seleção de uma resposta
 function selecionarResposta(event) {
   var respostaClicada = event.target;
   var resultado = {};
@@ -74,23 +64,19 @@ function selecionarResposta(event) {
   resultado.question = questions[indiceQuestaoAtual].question;
   resultados.push(resultado);
 
-  // Desabilita todas as respostas
   document.querySelectorAll(".answer").forEach((button) => {
     button.disabled = true;
   });
 
-  // Exibir o botão de próxima pergunta
   botaoProximaQuestao.classList.remove("hide");
   indiceQuestaoAtual++;
 }
 
-// Função para finalizar o jogo e exibir a pontuação
 function finalizarJogo() {
   var totalPerguntas = questions.length;
 
   var mensagem = "";
 
-  // Determina a mensagem com base no desempenho do jogador
   if (totalCorreto <= 13) {
     mensagem = "Pode melhorar :(";
   } else if (totalCorreto <= 17) {
@@ -101,14 +87,12 @@ function finalizarJogo() {
     mensagem = "Parabéns, você acertou tudo!";
   }
 
-  // Atualiza o conteúdo do contêiner de perguntas com a mensagem final e o botão para refazer o teste
   containerPerguntas.innerHTML = `
     <p class="final-message">
       Você acertou ${totalCorreto} de ${totalPerguntas} questões! <br> <br>
       <span>Resultado: ${mensagem}</span>
     </p>`;
 
-  // Exibe os resultados
   resultados.forEach((resultado, index) => {
     var textoResultado = resultado.correct ? "Acertou" : "Errou";
     var cor = resultado.correct ? "darkgreen" : "red";
@@ -154,10 +138,8 @@ fetch("/tentativa", {
   });
 });
 
-// Mostrar o nome o Usuário no começo 
       nomeTitulo.innerHTML = `Bem vindo(a) ao BíBliQuiz, ${sessionStorage.NOME_USUARIO}!<Br>`;
 
-// Array de perguntas e respostas
 
 var questions = [
   {
@@ -379,7 +361,7 @@ function vermandamentos() {
 function ranking() {
   var divRanking = document.querySelector(".div_ranking");
   if (divRanking.style.display === "none" || divRanking.style.display === "") {
-    limpargeral(".div_ranking");  // Hide other divs before showing the ranking div
+    limpargeral(".div_ranking");
     divRanking.style.display = "block";
   } else {
     divRanking.style.display = "none";
@@ -407,8 +389,7 @@ function limpargeral(tela) {
 }
 
 
-// Declarando o vetor e a função fora da função devocional
-const meuVetor = [
+const VetorDevocional = [
   "Porque eu bem sei os pensamentos que tenho a vosso respeito, diz o SENHOR; pensamentos de paz, e não de mal, para vos dar o fim que esperais. - Jeremias 29:11",
   "Tudo posso naquele que me fortalece. - Filipenses 4:13",
   "O SENHOR é o meu pastor; nada me faltará. - Salmo 23:1",
@@ -456,17 +437,25 @@ function obterValorAleatorio(vetor) {
   return vetor[indiceAleatorio];
 }
 
-function exibirDevocional() {
-  // Obtive o valor aleatório
-  var valorAleatorio = obterValorAleatorio(meuVetor);
 
-  // Exibi dentro da div
-  document.getElementById(
-    "exibir"
-  ).innerHTML = `<span style="color: white">${valorAleatorio}</span>`;
+function exibirDevocional(quantidade) {
+  var resultado = "";
+  
+  if (quantidade > 1) {
+    for (var i = 0; i < quantidade; i++) {
+      var versiculo = obterValorAleatorio(VetorDevocional);
+      resultado += `<span style="color: white">${versiculo}</span><br>`;
+    }
+  } else {
+    var versiculo = obterValorAleatorio(VetorDevocional);
+    resultado = `<span style="color: white">${versiculo}</span>`;
+  }
+
+  document.getElementById("exibir").innerHTML = resultado;
 }
 
-/* mychart velho testamento */
+
+/* Mychart Conhecimentos Gerais - Bíblicos */
 const data = {
   labels: ["Acertos", "Erros"],
   datasets: [

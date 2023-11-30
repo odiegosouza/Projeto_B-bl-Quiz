@@ -16,8 +16,10 @@ create table Usuario (
 idUsuario int primary key auto_increment,
 nome varchar(45),
 email varchar(45),
-senha varchar(45)
+senha varchar(45),
+fkPersonagem int, constraint fkPersonagem foreign key (fkPersonagem) references Personagem(idPersonagem)
 );
+
 
 create table Quiz (
 idQuiz int primary key
@@ -46,15 +48,19 @@ insert into Quiz value
 insert into Usuario (nome, email, senha) values
 ('Rayssa', 'rayssa@sptech.school', 'Rayssa7173@');
 
+insert into Usuario (nome, email, senha) values
+('Henrique', 'henrique@sptech.school', 'Rayssa7173@');
+
 insert into tentativa (fkQuiz, fkUsuario, qtd_acertos) values
 (1,2,19);
 
 insert into feedback (idFeedback, comentario, nota) values
 (null, "Maravilha, acertou quase todas!", 19);
 
-
+truncate table usuario;
 select * from usuario;
-select * from tentativa ;
+select * from tentativa;
+
 
 select * from tentativa; select distinct tentativa.fkUsuario,max(qtd_acertos) maximo, usuario.nome 
 from Tentativa join Usuario on Usuario.idUsuario = Tentativa.fkUsuario
